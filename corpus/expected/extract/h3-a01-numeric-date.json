@@ -1,0 +1,76 @@
+{
+  "case": "h3-a01-numeric-date",
+  "split": "heldout-3",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Glenrock Textiles LLC",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Glenrock Textiles LLC",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Swaledale Analytics LLC",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Swaledale Analytics LLC",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "unknown",
+      "reason": "ambiguous",
+      "candidates": [
+        {
+          "value": null,
+          "evidence": [
+            {
+              "page": 1,
+              "text": "11/07/2027",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

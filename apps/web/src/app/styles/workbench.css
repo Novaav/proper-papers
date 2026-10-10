@@ -1,0 +1,633 @@
+/* --- Document page: header, status, and the review workbench ------------------ */
+
+.document-head {
+  margin-bottom: 1rem;
+}
+
+.document-head h1 {
+  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+  overflow-wrap: anywhere;
+}
+
+.document-meta {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The workflow as properties: a muted label, its value beside it. */
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.pipeline-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin: 0;
+}
+
+.pipeline-facts > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 0.55rem;
+}
+
+.pipeline-facts dt {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.pipeline-facts dd {
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+.pipeline-facts dd.tone-attention {
+  color: var(--text);
+}
+
+.pipeline-facts dd.tone-failed {
+  color: var(--failed);
+}
+
+.pipeline-notice {
+  color: var(--muted);
+}
+
+.pipeline-check {
+  margin: 0;
+}
+
+/* The record: one framed surface. A title bar, a band that says what is left
+   to decide, then the workbench. */
+.record {
+  container: record / inline-size;
+  overflow: clip;
+  border-radius: var(--radius-window);
+  background: var(--canvas);
+  box-shadow: var(--shadow-window);
+}
+
+.record h2 {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--subtle);
+  font-size: 0.8125rem;
+}
+
+.approval,
+.record > .review,
+.record > .record-summary {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.approval {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem 1.5rem;
+  align-items: center;
+}
+
+.approval > * {
+  grid-column: 1;
+  margin: 0;
+}
+
+.approval > form,
+.approval > .band-action {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.approval > .approval-earlier {
+  grid-column: 1 / -1;
+}
+
+.record-summary {
+  color: var(--muted);
+}
+
+.approval .record-summary {
+  padding: 0;
+  border: 0;
+}
+
+.approval:has(.review),
+.record > .review {
+  background: color-mix(in srgb, var(--attention-bg) 55%, var(--canvas));
+}
+
+.review-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 620;
+}
+
+.review-title::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--attention-rule);
+}
+
+.review-title--ready::before {
+  background: var(--success);
+}
+
+.approval:has(.review-title--ready) {
+  background: color-mix(in srgb, var(--success-bg) 55%, var(--canvas));
+}
+
+.review ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review li {
+  padding: 0.15rem 0.65rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.review a {
+  color: var(--text);
+  font-weight: 560;
+  text-decoration-color: var(--rule-strong);
+}
+
+.review a:hover {
+  text-decoration-color: currentColor;
+}
+
+.review li a::after {
+  content: " \2193" / "";
+  color: var(--muted);
+}
+
+.approval-version,
+.review-note {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.record > .review-note {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.approval-earlier {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.approval-earlier summary {
+  cursor: pointer;
+}
+
+.approval-earlier ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+}
+
+/* Fields: a list of links, one panel shown beside (or under) it. */
+.field-list {
+  padding: 0.25rem 0 0.75rem;
+}
+
+.group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem 0.35rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fields {
+  margin: 0;
+  padding: 0 0.5rem;
+  list-style: none;
+}
+
+.field-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "label source"
+    "value value";
+  column-gap: 0.75rem;
+  row-gap: 0.1rem;
+  padding: 0.6rem 0.75rem 0.65rem 0.85rem;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color 120ms ease;
+}
+
+.field-link:hover {
+  background: var(--hover);
+}
+
+.field-link:active {
+  background: var(--selected);
+}
+
+.field-link:focus-visible {
+  outline-offset: -2px;
+}
+
+.field-link[aria-current] {
+  background: var(--select-bg);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.field-link[aria-current]::before {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  bottom: 0.55rem;
+  left: 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--accent);
+}
+
+.field-label {
+  grid-area: label;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.field--attention .field-label {
+  color: var(--text);
+  font-weight: 560;
+}
+
+.field--attention .field-label::before {
+  content: "";
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background: var(--attention-rule);
+  vertical-align: 0.1em;
+}
+
+.field-source {
+  grid-area: source;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.field-value {
+  grid-area: value;
+  font-size: 0.9375rem;
+  font-weight: 540;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.field--unresolved .field-value {
+  color: var(--muted);
+  font-weight: 450;
+}
+
+.field-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.4rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: var(--attention-bg);
+  color: var(--attention);
+  font-size: 0.75rem;
+  font-weight: 580;
+  line-height: 1.6;
+  vertical-align: 0.1em;
+  white-space: nowrap;
+}
+
+.field-flag::before {
+  content: "";
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.75;
+}
+
+.field-decision {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 560;
+}
+
+/* A chosen value is verified: green with a check. */
+.field-decision--value {
+  color: var(--success);
+}
+
+.field-decision--value::before {
+  content: "✓ " / "";
+}
+
+/* An acknowledged unknown is not a verified value: neutral with an open circle. */
+.field-decision--unknown {
+  color: var(--neutral);
+}
+
+.field-decision--unknown::before {
+  content: "○ " / "";
+}
+
+/* The panel: the field's value, its source text, and the decision. Only one
+   is shown. The default comes last in the document, so a targeted panel (an
+   earlier sibling) can hide it with the sibling combinator; no :has() needed. */
+.panes {
+  padding: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.pane {
+  display: none;
+  scroll-margin-top: 0.75rem;
+}
+
+.pane--default,
+.pane:target {
+  display: block;
+  animation: reveal 160ms ease-out;
+}
+
+.pane:target ~ .pane--default {
+  display: none;
+}
+
+.pane-kicker {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pane-value {
+  margin: 0.2rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.pane-empty {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.evidence {
+  margin-top: 1rem;
+}
+
+.provenance {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.provenance-file {
+  color: var(--text);
+  font-weight: 540;
+  overflow-wrap: anywhere;
+}
+
+/* The exact source text, verbatim, as a snippet of its page. */
+.quote {
+  margin: 0.6rem 0 0;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.quote figcaption {
+  padding: 0.25rem 0.8rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--subtle);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.quote blockquote {
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.quote mark {
+  padding: 0.05em 0.2em;
+  border-radius: 3px;
+  background: var(--hl);
+  color: inherit;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Conflicting values side by side. */
+.candidates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.75rem;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.candidate {
+  padding: 0.75rem 0.8rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--subtle);
+}
+
+.candidate-value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.candidate .quote {
+  margin-top: 0.5rem;
+}
+
+.candidate .review-action {
+  margin-top: 0.75rem;
+}
+
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--rule);
+}
+
+.about {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.about summary {
+  cursor: pointer;
+}
+
+.about dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 1.25rem;
+  margin: 0.75rem 0 0;
+}
+
+.about dl div {
+  display: contents;
+}
+
+.about dd {
+  margin: 0;
+}
+
+.full-hash {
+  overflow-wrap: anywhere;
+}
+
+/* Wide: the fields on the left, the panel beside them. The panel stays in
+   view only when the window is tall enough to hold it; on a short laptop it
+   scrolls with the page, so there is never a scroll area inside the page. */
+@container record (min-width: 56rem) {
+  .workbench {
+    display: grid;
+    grid-template-columns: minmax(18rem, 2fr) minmax(0, 3fr);
+    align-items: start;
+  }
+
+  .field-list {
+    border-right: 1px solid var(--rule);
+  }
+
+  .panes {
+    padding: 1.25rem 1.5rem 1.5rem;
+    border-top: 0;
+  }
+}
+
+@media (min-height: 50rem) {
+  @container record (min-width: 56rem) {
+    .panes {
+      position: sticky;
+      top: 0.75rem;
+    }
+  }
+}
+
+.pane-next {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8125rem;
+}
+
+.pane-next a {
+  color: var(--text);
+  font-weight: 560;
+  text-decoration-color: var(--rule-strong);
+}
+
+.pane-next a:hover {
+  text-decoration-color: currentColor;
+}
+
+.review-actions + .pane-next {
+  margin-top: 0.9rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* The next step on a document page: a plain callout, one primary button. */
+.next-step {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-window);
+  background: var(--subtle);
+}
+
+.next-step h2 {
+  margin-bottom: 0.2rem;
+  font-size: 0.9375rem;
+}
+
+.next-step p {
+  max-width: 40rem;
+  color: var(--muted);
+}
+
+.next-step form {
+  margin: 0;
+}
+
+@media (max-width: 48rem) {
+  .pane {
+    scroll-margin-top: 0.75rem;
+  }
+
+  .approval {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .approval > form,
+  .approval > .band-action {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+  }
+}

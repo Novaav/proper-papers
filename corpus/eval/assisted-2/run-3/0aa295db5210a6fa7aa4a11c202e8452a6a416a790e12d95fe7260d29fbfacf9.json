@@ -1,0 +1,14 @@
+{
+ "request_sha256": "0aa295db5210a6fa7aa4a11c202e8452a6a416a790e12d95fe7260d29fbfacf9",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Foxley Robotics Ltd, which supplies the services\",\"raw\":\"Foxley Robotics Ltd\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Brightwater Health GmbH, which receives them\",\"raw\":\"Brightwater Health GmbH\"}],\"effective_date\":[{\"page\":1,\"quote\":\"The services start on 7 October 2027.\",\"raw\":\"7 October 2027\"}],\"end_date\":[],\"governing_law\":[],\"contract_value\":[],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2262,
+  "output_tokens": 191,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.13,
+  "error": null
+ }
+}

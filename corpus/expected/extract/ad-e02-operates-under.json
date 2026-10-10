@@ -1,0 +1,65 @@
+{
+  "case": "ad-e02-operates-under",
+  "split": "assist-dev",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Kirkbride Software GmbH",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Kirkbride Software GmbH",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Hazelmere Analytics S.A.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Hazelmere Analytics S.A.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

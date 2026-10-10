@@ -1,0 +1,87 @@
+{
+  "case": "dev-m2-required-missing",
+  "split": "dev",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Fernhill Software Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Fernhill Software Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Oakridge Veterinary Group",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Oakridge Veterinary Group",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "England and Wales",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "England and Wales",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": 45,
+          "evidence": [
+            {
+              "page": 1,
+              "text": "45 days",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

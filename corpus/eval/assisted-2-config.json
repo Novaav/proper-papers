@@ -1,0 +1,14 @@
+{
+  "extractor": "assisted-2+342453203207",
+  "prompt": "assisted-2",
+  "prompt_sha256": "b50bca739e5cb2bbd30293843b38f5f5983e9f9ddd8bf46b6b53b9552c78eada",
+  "config_sha256": "342453203207ac8f36d76ec190fc4c4fe2a7941fd3e8cbe9854549499ff1451b",
+  "model": "claude-sonnet-5-5",
+  "effort": "low",
+  "max_tokens": 1024,
+  "inference_geo": "global",
+  "sampling": "default",
+  "output_schema_sha256": "a794946f154056af3b3683c0792fd6e19d651b3d8fba230e4af1987135747a2a",
+  "sdk": "anthropic 1.11.0",
+  "verifier": "2"
+}

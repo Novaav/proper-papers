@@ -1,0 +1,10 @@
+{
+  "code": "too_many_pages",
+  "ok": false,
+  "schema": "docparser.output.v1",
+  "versions": {
+    "docparser": "0.1.0",
+    "normalizer": "1",
+    "pdfminer.six": "20260107"
+  }
+}

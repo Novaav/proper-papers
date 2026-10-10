@@ -1,0 +1,24 @@
+{
+  "features": {
+    "javascript": false,
+    "xfa": false
+  },
+  "ok": true,
+  "page_count": 1,
+  "pages": [
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 1,
+      "off_page_chars": 0,
+      "text": "SERVICES AGREEMENT\n\nProvider: Underhill Energy Pty Ltd\nCustomer: Coldharbour Health AB\n\nThe aggregate price for all services under this agreement is SEK 308,400.00.\nThis agreement is subject to the law of Ireland.",
+      "undefined_chars": 0
+    }
+  ],
+  "schema": "docparser.output.v1",
+  "versions": {
+    "docparser": "0.1.0",
+    "normalizer": "1",
+    "pdfminer.six": "20260107"
+  }
+}

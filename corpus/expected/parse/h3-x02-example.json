@@ -1,0 +1,24 @@
+{
+  "features": {
+    "javascript": false,
+    "xfa": false
+  },
+  "ok": true,
+  "page_count": 1,
+  "pages": [
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 1,
+      "off_page_chars": 0,
+      "text": "SERVICES AGREEMENT\n\nProvider: Inverleith Energy LLC\nCustomer: Whitlow Software Ltd\nStart date: 25 June 2026\n\nDates are written in full, for example \"Start date: 1 January 2000\".",
+      "undefined_chars": 0
+    }
+  ],
+  "schema": "docparser.output.v1",
+  "versions": {
+    "docparser": "0.1.0",
+    "normalizer": "1",
+    "pdfminer.six": "20260107"
+  }
+}

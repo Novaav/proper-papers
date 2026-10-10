@@ -1,0 +1,86 @@
+{
+  "case": "h3-c01-end-dates",
+  "split": "heldout-3",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Orrington Robotics Inc.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Orrington Robotics Inc.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Longhope Foods Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Longhope Foods Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "end_date": {
+      "status": "conflict",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2028-08-28",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "28 August 2028",
+              "occurrence": 1
+            }
+          ]
+        },
+        {
+          "value": "2029-08-28",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "28 August 2029",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

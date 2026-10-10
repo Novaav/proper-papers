@@ -1,0 +1,200 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  api:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      # Mandatory real-engine gate for malware scanning (apps/api/tests/test_clamd_real.py):
+      # digest-pinned official image with preloaded signature databases (no download).
+      CLAMAV_IMAGE: clamav/clamav:1.4.6@sha256:57deb108fc4c72778aa83eafbca7bb7153e28c3f57c005afd38d31f16da86f23
+    services:
+      postgres:
+        image: postgres:18.6@sha256:5a5a84b19854a9ffaa54082c166ff4ec27473a361e496e5ea167f298f2da9722
+        env:
+          # Superuser password for this job's ephemeral container only; not a secret.
+          POSTGRES_PASSWORD: ci-throwaway
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 2s
+          --health-timeout 5s
+          --health-retries 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Two engines: production limits (plus the test-only marker signature) and
+      # 1 MiB limits for the exceeded-limit cases. Ports on 127.0.0.1 only.
+      # Files are copied in (not bind-mounted): the image's entrypoint chowns
+      # its configuration and database directories.
+      - name: Start pinned ClamAV engines
+        run: |
+          for spec in "clamd 3310 clamd.conf" "clamd-tight 3311 clamd-tight.conf"; do
+            set -- $spec
+            docker create --name "$1" -p "127.0.0.1:$2:3310" \
+              -e CLAMAV_NO_FRESHCLAMD=true -e CLAMAV_NO_MILTERD=true "$CLAMAV_IMAGE"
+            docker cp "apps/api/tests/clamav/$3" "$1:/etc/clamav/clamd.conf"
+            docker cp apps/api/tests/clamav/test.ndb "$1:/var/lib/clamav/test.ndb"
+            docker start "$1"
+          done
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: "0.10.4"
+          enable-cache: false
+      - name: Provision disposable test database
+        env:
+          POSTGRES_CONTAINER: ${{ job.services.postgres.id }}
+        run: |
+          owner_password="$(openssl rand -hex 24)"
+          runtime_password="$(openssl rand -hex 24)"
+          operator_password="$(openssl rand -hex 24)"
+          worker_password="$(openssl rand -hex 24)"
+          echo "::add-mask::$owner_password"
+          echo "::add-mask::$runtime_password"
+          echo "::add-mask::$operator_password"
+          echo "::add-mask::$worker_password"
+          docker exec -i "$POSTGRES_CONTAINER" psql -X -U postgres -d postgres -v ON_ERROR_STOP=1 \
+            -v owner_password="$owner_password" -v runtime_password="$runtime_password" \
+            -v operator_password="$operator_password" -v worker_password="$worker_password" \
+            -f - < apps/api/db/roles.sql
+          docker exec -i "$POSTGRES_CONTAINER" psql -X -U postgres -d postgres -v ON_ERROR_STOP=1 \
+            -v db_name=app_test -v db_purpose=disposable-test-database \
+            -f - < apps/api/db/database.sql
+          {
+            echo "TEST_DATABASE_URL_OWNER=postgresql://app_owner:$owner_password@127.0.0.1:5432/app_test"
+            echo "TEST_DATABASE_URL_RUNTIME=postgresql://app_runtime:$runtime_password@127.0.0.1:5432/app_test"
+            echo "TEST_DATABASE_URL_OPERATOR=postgresql://app_operator:$operator_password@127.0.0.1:5432/app_test"
+            echo "TEST_DATABASE_URL_WORKER=postgresql://app_worker:$worker_password@127.0.0.1:5432/app_test"
+            # Superuser of this throwaway container, used by tests only to create temporary roles.
+            echo "TEST_DATABASE_URL_ADMIN=postgresql://postgres:ci-throwaway@127.0.0.1:5432/app_test"
+          } >> "$GITHUB_ENV"
+      # uv provisions Python from apps/api/.python-version.
+      - run: make api-setup
+      - run: make api-test-db-migrate
+      - name: Wait for the ClamAV engines
+        run: |
+          for port in 3310 3311; do
+            for attempt in $(seq 1 150); do
+              if python3 -c "import socket, sys; s = socket.create_connection(('127.0.0.1', $port), 2); s.sendall(b'zPING\0'); sys.exit(0 if s.recv(16) == b'PONG\0' else 1)" 2>/dev/null; then
+                echo "clamd on port $port answers PONG"
+                break
+              fi
+              if [ "$attempt" = 150 ]; then
+                docker logs clamd; docker logs clamd-tight
+                exit 1
+              fi
+              sleep 2
+            done
+          done
+      # The isolated parser image (DI-1): apps/api/tests/test_parser_sandbox.py runs the
+      # corpus and the isolation probes through it and is mandatory under GitHub Actions.
+      - name: Build the parser image
+        run: make parser-image PARSER_IMAGE=production-ai-flagship-parser:ci
+      - run: make api-check
+        env:
+          REAL_CLAMD_ADDRESS: tcp://127.0.0.1:3310
+          REAL_CLAMD_TIGHT_ADDRESS: tcp://127.0.0.1:3311
+          REQUIRE_REAL_CLAMD: "1"
+          PARSER_IMAGE: production-ai-flagship-parser:ci
+          REQUIRE_PARSER_SANDBOX: "1"
+      - name: ClamAV logs
+        if: failure()
+        run: |
+          docker logs clamd || true
+          docker logs clamd-tight || true
+
+  # The isolated PDF parser (DI-1): package checks, the deterministic corpus against its
+  # manifest, the image's hash-locked requirements against uv.lock, the limits
+  # measurement through the real sandbox (report only), and the extraction
+  # evaluation gates (make eval).
+  parser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: "0.10.4"
+          enable-cache: false
+      - run: make parser-setup parser-check
+      - run: make parser-image PARSER_IMAGE=production-ai-flagship-parser:ci
+      - run: make api-setup
+      - name: Measure the parser limits
+        run: make parser-measure PARSER_IMAGE=production-ai-flagship-parser:ci
+      # DI-1 extraction evaluation through the real sandbox: dev gates are hard, held-out
+      # must not regress against corpus/eval/heldout-baseline.json (scripts/evaluate.py).
+      - name: Evaluate extraction
+        run: make eval PARSER_IMAGE=production-ai-flagship-parser:ci
+      # AI1: every frozen profile's committed responses (corpus/eval/assisted-*/) re-scored
+      # through the real sandbox, offline (no key, no network): every run's hard gates must
+      # hold and the result must reproduce the committed report (scripts/eval_assisted.py).
+      - name: Evaluate assisted extraction (recorded responses)
+        run: make eval-assisted PARSER_IMAGE=production-ai-flagship-parser:ci
+
+  # The supported local scanner helper (scripts/local-clamav.sh) on a runner with Docker.
+  scanner-tooling:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Start, check, stop and remove the local scanner (idempotent)
+        run: |
+          scripts/local-clamav.sh up | tee up.txt
+          # When the signatures were updated, clamd must already report the new
+          # database (the helper waits for the background reload).
+          updated="$(sed -n 's/.*signatures updated (database [0-9]* -> \([0-9]*\)).*/\1/p' up.txt)"
+          if [ -n "$updated" ]; then
+            scripts/local-clamav.sh status | grep -q "VERSION -> ClamAV 1.4.6/$updated/"
+          fi
+          docker port production-ai-flagship-clamd | tee ports.txt
+          grep -qx '3310/tcp -> 127.0.0.1:3310' ports.txt
+          test "$(wc -l < ports.txt)" -eq 1
+          scripts/local-clamav.sh status | tee status.txt
+          grep -q 'PING -> PONG' status.txt
+          grep -q 'VERSION -> ClamAV 1.4.6/' status.txt
+          scripts/local-clamav.sh down
+          scripts/local-clamav.sh down
+          scripts/local-clamav.sh up
+          scripts/local-clamav.sh remove
+          scripts/local-clamav.sh remove
+          scripts/local-clamav.sh status | grep -q 'no container'
+      - name: Never touches a container it does not own
+        run: |
+          image="$(sed -n 's/^ *CLAMAV_IMAGE: *\(clamav\/clamav:[^ ]*\) *$/\1/p' .github/workflows/ci.yml)"
+          docker create --name production-ai-flagship-clamd "$image" true >/dev/null
+          if scripts/local-clamav.sh remove; then exit 1; fi
+          if scripts/local-clamav.sh up; then exit 1; fi
+          docker inspect production-ai-flagship-clamd >/dev/null
+          docker rm production-ai-flagship-clamd >/dev/null
+
+  web:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: apps/web/.nvmrc
+          package-manager-cache: false
+      # Corepack (bundled with Node 24) provides the pnpm version pinned in apps/web/package.json.
+      - run: make web-setup web-check

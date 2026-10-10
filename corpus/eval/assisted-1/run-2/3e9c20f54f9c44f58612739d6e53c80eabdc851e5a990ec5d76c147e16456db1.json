@@ -1,0 +1,14 @@
+{
+ "request_sha256": "3e9c20f54f9c44f58612739d6e53c80eabdc851e5a990ec5d76c147e16456db1",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Provider .................... Tidewater Systems Ltd\",\"raw\":\"Tidewater Systems Ltd\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Customer .................... Greyfield Logistics Ltd\",\"raw\":\"Greyfield Logistics Ltd\"}],\"effective_date\":[{\"page\":2,\"quote\":\"Effective date .............. 2 January 2027\",\"raw\":\"2 January 2027\"}],\"end_date\":[],\"governing_law\":[],\"contract_value\":[{\"page\":2,\"quote\":\"Contract value .............. EUR 64,000.00\",\"raw\":\"EUR 64,000.00\"}],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2129,
+  "output_tokens": 240,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.737,
+  "error": null
+ }
+}

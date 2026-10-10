@@ -1,0 +1,76 @@
+{
+  "case": "h3-e05-repeated-mentions",
+  "split": "heldout-3",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Emberley Aviation Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Emberley Aviation Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Dunmore Consulting B.V.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Dunmore Consulting B.V.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": 45,
+          "evidence": [
+            {
+              "page": 1,
+              "text": "45 days",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

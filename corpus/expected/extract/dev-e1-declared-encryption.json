@@ -1,0 +1,7 @@
+{
+  "case": "dev-e1-declared-encryption",
+  "split": "dev",
+  "outcome": "failed",
+  "failure_code": "encrypted_pdf",
+  "fields": null
+}

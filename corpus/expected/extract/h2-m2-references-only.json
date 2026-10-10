@@ -1,0 +1,76 @@
+{
+  "case": "h2-m2-references-only",
+  "split": "heldout-2",
+  "outcome": "completed",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Ashgrove Laboratories Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Ashgrove Laboratories Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Pennine Cycle Co",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Pennine Cycle Co",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2027-08-02",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "2 August 2027",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

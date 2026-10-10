@@ -1,0 +1,14 @@
+{
+ "request_sha256": "523302466086fd05b9942ea9958f4d5dc4e83da004b5d7b08dda12827648b409",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[],\"customer_name\":[{\"page\":1,\"quote\":\"Customer Name: Osprey Clinics Ltd\",\"raw\":\"Osprey Clinics Ltd\"}],\"effective_date\":[{\"page\":1,\"quote\":\"Effective as of: March 3, 2027\",\"raw\":\"March 3, 2027\"}],\"end_date\":[{\"page\":1,\"quote\":\"Term ends: March 2, 2028\",\"raw\":\"March 2, 2028\"}],\"governing_law\":[{\"page\":1,\"quote\":\"Governing law: State of New York\",\"raw\":\"State of New York\"}],\"contract_value\":[{\"page\":1,\"quote\":\"Fees (total): USD 75,000\",\"raw\":\"USD 75,000\"}],\"notice_period_days\":[{\"page\":1,\"quote\":\"Notice period for termination: 30 days\",\"raw\":\"30 days\"}]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2135,
+  "output_tokens": 284,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.151,
+  "error": null
+ }
+}

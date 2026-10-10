@@ -1,0 +1,14 @@
+{
+ "request_sha256": "a172e71f50bff3fa79cebc288b8017cf9e9304f3970eaa9bb41b49d32d65c0ff",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Party providing services | Hollowbrook Media Ltd\",\"raw\":\"Hollowbrook Media Ltd\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Party receiving services | Tamsin Cole Architects\",\"raw\":\"Tamsin Cole Architects\"}],\"effective_date\":[{\"page\":1,\"quote\":\"Commencement | 2 February 2027\",\"raw\":\"2 February 2027\"}],\"end_date\":[{\"page\":1,\"quote\":\"Expiry | 1 February 2028\",\"raw\":\"1 February 2028\"}],\"governing_law\":[],\"contract_value\":[{\"page\":1,\"quote\":\"Price | EUR 12,600.00\",\"raw\":\"EUR 12,600.00\"}],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2115,
+  "output_tokens": 269,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.24,
+  "error": null
+ }
+}

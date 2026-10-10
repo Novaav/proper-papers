@@ -1,0 +1,7 @@
+{
+  "case": "dev-x5-embedded-file",
+  "split": "dev",
+  "outcome": "failed",
+  "failure_code": "embedded_content",
+  "fields": null
+}

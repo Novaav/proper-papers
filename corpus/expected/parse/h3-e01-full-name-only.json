@@ -1,0 +1,24 @@
+{
+  "features": {
+    "javascript": false,
+    "xfa": false
+  },
+  "ok": true,
+  "page_count": 1,
+  "pages": [
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 1,
+      "off_page_chars": 0,
+      "text": "MASTER SERVICES AGREEMENT\n\nThis agreement is entered into by Foxley Robotics Ltd, which supplies the services,\nand Brightwater Health GmbH, which receives them.\n\nThe services start on 7 October 2027.\nFurther terms are set out in the schedules.",
+      "undefined_chars": 0
+    }
+  ],
+  "schema": "docparser.output.v1",
+  "versions": {
+    "docparser": "0.1.0",
+    "normalizer": "1",
+    "pdfminer.six": "20260107"
+  }
+}

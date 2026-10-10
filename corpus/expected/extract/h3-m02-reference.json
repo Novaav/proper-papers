@@ -1,0 +1,65 @@
+{
+  "case": "h3-m02-reference",
+  "split": "heldout-3",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Greystone Engineering S.A.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Greystone Engineering S.A.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Saxonby Aviation S.A.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Saxonby Aviation S.A.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

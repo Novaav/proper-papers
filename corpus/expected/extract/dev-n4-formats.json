@@ -1,0 +1,123 @@
+{
+  "case": "dev-n4-formats",
+  "split": "dev",
+  "outcome": "completed",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Quillon Data Systems Inc.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Quillon Data Systems Inc.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Saltmarsh Energy Co.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Saltmarsh Energy Co.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2026-06-01",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "2026-06-01",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2029-05-31",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "May 31, 2029",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "governing_law": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "State of New York",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "State of New York",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "contract_value": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": {
+            "amount": "1250000.00",
+            "currency": "USD"
+          },
+          "evidence": [
+            {
+              "page": 1,
+              "text": "USD 1,250,000",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "notice_period_days": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": 30,
+          "evidence": [
+            {
+              "page": 1,
+              "text": "30 calendar days",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

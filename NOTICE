@@ -1,0 +1,39 @@
+Proper Papers is licensed under the MIT License (see LICENSE).
+This file lists third-party material that is included in this repository or
+that the project depends on under other terms. Dependencies are installed from
+the lockfiles (apps/web/pnpm-lock.yaml, apps/api/uv.lock, apps/parser/uv.lock)
+and are not redistributed in this repository unless listed under "Included".
+
+The MIT License of this project covers only the original work in this repository
+(source code, documentation and the synthetic corpus). It does not apply to the
+third-party components below, which remain under their own licences.
+
+Included
+- Inter variable font (apps/web/src/app/fonts/InterVariable.woff2).
+  Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter).
+  SIL Open Font License 1.1; the licence text is in
+  apps/web/src/app/fonts/Inter-OFL.txt.
+- The synthetic corpus (corpus/) is original work of the author. Every
+  organisation, person and amount in it is invented.
+
+Dependencies under licences other than MIT/BSD/ISC/Apache-2.0 (not modified,
+not bundled in this repository)
+- psycopg and psycopg-binary (Python): LGPL-3.0. Used as an unmodified,
+  separately installed library.
+- libvips, through sharp's @img/sharp-libvips-* packages (npm, installed by
+  Next.js for image handling): LGPL-3.0-or-later. Installed, not vendored.
+- certifi, pathspec (Python); axe-core (npm, development only): MPL-2.0.
+- caniuse-lite (npm, development only): CC-BY-4.0.
+- language-subtag-registry (npm, development only): CC0-1.0.
+- minimatch (BlueOak-1.0.0), tslib (0BSD), argparse (Python-2.0): permissive.
+- typing_extensions (Python): PSF-2.0.
+
+Services run as separate processes, not distributed here
+- ClamAV (GPL-2.0), run as the clamav/clamav container image for malware
+  scanning. This project talks to it over the network only.
+- PostgreSQL (PostgreSQL License) and the python:3.14-slim base image used for
+  the parser container.
+
+The licence inventory was taken from the installed packages on 10 October 2026
+and is not a legal opinion. Transitive licences may change when dependencies
+are updated.

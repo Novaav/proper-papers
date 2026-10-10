@@ -1,0 +1,14 @@
+{
+ "request_sha256": "65c35f3756fdf71d0646ab361ca7bbba62cfe6910521ea11835aaa2d65cb3e28",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[],\"customer_name\":[],\"effective_date\":[],\"end_date\":[],\"governing_law\":[{\"page\":1,\"quote\":\"This agreement is subject to the law of Ireland.\",\"raw\":\"Ireland\"}],\"contract_value\":[{\"page\":1,\"quote\":\"The aggregate price for all services under this agreement is SEK 308,400.00.\",\"raw\":\"SEK 308,400.00\"}],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2243,
+  "output_tokens": 151,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 1.87,
+  "error": null
+ }
+}

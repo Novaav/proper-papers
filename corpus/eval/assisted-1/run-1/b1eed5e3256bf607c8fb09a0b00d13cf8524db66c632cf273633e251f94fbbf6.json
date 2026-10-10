@@ -1,0 +1,14 @@
+{
+ "request_sha256": "b1eed5e3256bf607c8fb09a0b00d13cf8524db66c632cf273633e251f94fbbf6",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Supplier: Quarry Hill Archives Ltd\",\"raw\":\"Quarry Hill Archives Ltd\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Client: Netherby Parish Council\",\"raw\":\"Netherby Parish Council\"}],\"effective_date\":[{\"page\":1,\"quote\":\"Commencement Date: 1 July 2027\",\"raw\":\"1 July 2027\"},{\"page\":1,\"quote\":\"This agreement takes effect on 2027-07-01.\",\"raw\":\"2027-07-01\"}],\"end_date\":[],\"governing_law\":[],\"contract_value\":[],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2101,
+  "output_tokens": 230,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.62,
+  "error": null
+ }
+}

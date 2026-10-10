@@ -1,0 +1,195 @@
+{
+  "dataset": "di1-service-agreements",
+  "split": "heldout-3",
+  "purpose": "AI1 assisted-2: measured once, against rules-1, with the frozen assisted-2 configuration; never used for development.",
+  "spec_sha256": {
+    "heldout-3-spec.json": "bbde95ea4ec0dae27222d252370f31497d6f267bab7fa1cd6ddcaecbd5bf2020",
+    "heldout-3-spec.md": "694d63fd97e941c8e6e2a7d3920b57fe8babfb2243e0a0ffe57b58bbace14fba"
+  },
+  "generator": "corpus/generated.py",
+  "generator_sha256_at_freeze": "d99df4104e221fed57b1aa84d789dfdc14915c236ff93a4e310b203c219cebf8",
+  "seed": 20261002,
+  "cases": [
+    "h3-a01-numeric-date",
+    "h3-c01-end-dates",
+    "h3-c02-notice",
+    "h3-d01-two-forms",
+    "h3-e01-full-name-only",
+    "h3-e02-defined-short-name",
+    "h3-e03-trading-as",
+    "h3-e04-wrapped-name",
+    "h3-e05-repeated-mentions",
+    "h3-e06-signature-only",
+    "h3-e07-no-longer-form",
+    "h3-e08-shared-prefix",
+    "h3-e09-reversed-roles",
+    "h3-e10-planted-definition",
+    "h3-l01-columns",
+    "h3-l02-next-line",
+    "h3-m01-unparseable",
+    "h3-m02-reference",
+    "h3-m03-formula",
+    "h3-p01-dates",
+    "h3-p02-amount-law",
+    "h3-p03-notice",
+    "h3-x01-instruction",
+    "h3-x02-example"
+  ],
+  "case_count": 24,
+  "field_count": 168,
+  "expected_field_statuses": {
+    "found": 65,
+    "conflict": 3,
+    "unknown": 100
+  },
+  "coverage": {
+    "adversarial": [
+      "h3-x01-instruction",
+      "h3-x02-example"
+    ],
+    "ambiguous": [
+      "h3-a01-numeric-date"
+    ],
+    "conflict": [
+      "h3-c01-end-dates",
+      "h3-c02-notice"
+    ],
+    "duplicate": [
+      "h3-d01-two-forms"
+    ],
+    "entity": [
+      "h3-e01-full-name-only",
+      "h3-e02-defined-short-name",
+      "h3-e03-trading-as",
+      "h3-e04-wrapped-name",
+      "h3-e05-repeated-mentions",
+      "h3-e06-signature-only",
+      "h3-e07-no-longer-form",
+      "h3-e08-shared-prefix",
+      "h3-e09-reversed-roles",
+      "h3-e10-planted-definition"
+    ],
+    "layout": [
+      "h3-l01-columns",
+      "h3-l02-next-line"
+    ],
+    "missing": [
+      "h3-m01-unparseable",
+      "h3-m02-reference",
+      "h3-m03-formula"
+    ],
+    "phrasing": [
+      "h3-p01-dates",
+      "h3-p02-amount-law",
+      "h3-p03-notice"
+    ]
+  },
+  "pdf_sha256": {
+    "h3-e01-full-name-only": "f576afda73a136001efe57671bba67c57aadb6edbc7262aad1bec55ecca97e84",
+    "h3-e02-defined-short-name": "eba32d87294269207ef3a7794ba36a2755939d82ea2d20977c127128e1df485f",
+    "h3-e03-trading-as": "3344cf5084b5f6f5f64794ebfabee0a21bf0b005a2a1fdade051a7c82507b186",
+    "h3-e04-wrapped-name": "8496dbfa3174818fcf5b5e2d02fe69d1d8c7333ec05f7909d24e1028be5f640c",
+    "h3-e05-repeated-mentions": "c2845129ed0653d600d5d88391d010b645d4f62e5894a68d7ddc8d7a3715c77e",
+    "h3-e06-signature-only": "69920b5e85b87b3eb9ab24d98b2760518ff86a2e3b8da344a41d1627fbec9b63",
+    "h3-e07-no-longer-form": "fa8deafa939b7002aff425264dd72babf5ce15bfe139999f4cafd12b12480fda",
+    "h3-e08-shared-prefix": "c176e4782a9146528139bf29a42d36a9890f48d20e416b0c00fce75ce25477c1",
+    "h3-e09-reversed-roles": "2852bfa8e074f4396082e6e182ae51925e4017d87b6b9f5fc10028b8fb82fdd9",
+    "h3-e10-planted-definition": "71b77181f05319b8d5de422d266688281cb8d1fbb5b2efaf12b2312f6b890919",
+    "h3-p01-dates": "d6053a540c9230cdf8c62d41d7fac30c4fc6ae31b23e1d373230510e43d68603",
+    "h3-p02-amount-law": "7b2a1bdbfe1e0073888645a4501acb2a5bde7962869d56507b3463decfd727ce",
+    "h3-p03-notice": "28ff732cc40a794f113497a2e7908cdaffa5c1d53fbf6956dcc5d739babe4c37",
+    "h3-l01-columns": "f899049b0669da169ed3fef91536859b3e754c925225f7b5d3314fde47405f97",
+    "h3-l02-next-line": "af92b85068646cfe83338ce89a67c2c68677cb40ccea2a5f17bbcbbf16bca0e0",
+    "h3-m01-unparseable": "4495d995f31171878922ab323f82aef6808c886f682a74776cfccc3c6f87a075",
+    "h3-m02-reference": "ac482cd5039116d3466e6c40568a44950ccf0fbe4d0dc21f4cbef79614473927",
+    "h3-m03-formula": "4abbcd34985c24370893f6bf717960b4bc259f703eb5926756fd0ee1a927d81d",
+    "h3-c01-end-dates": "b79b86b9946d0fda280255ab3a2f1b7c3aeb626e6810a546e4700bbb85e796fc",
+    "h3-c02-notice": "6539e3db831dbf5688fbb3d9deb9674faf3feb714fdbed7d9788e98e2639f4d7",
+    "h3-a01-numeric-date": "35c71896e29a579aaccb925be6a01261f4fe4c8dc567eb763f104771ebd74577",
+    "h3-x01-instruction": "6d71bdfa7cc9c085b0265c64b6a8d88caeaf2395bdae696330d31f9f273ddd02",
+    "h3-x02-example": "c059034b25b394827a71d2a55b8dad1b0c8ff44d785c683b01af0d8f564f9a9a",
+    "h3-d01-two-forms": "b150fd54344870342d7037fc18c71a9998cfe316b6d8383b44c960703031b9eb"
+  },
+  "expected_extract_sha256": {
+    "h3-a01-numeric-date": "59b5e8e6d8b6376cffbab3a14994724e622690bb6914815534671b85bfece437",
+    "h3-c01-end-dates": "c15556ed2811e6a92ceb98a8da7754f35576b9a728476e8fa5cfdc02fad296c6",
+    "h3-c02-notice": "dda3819f446948f5a21e5854d7e5ab2797f0049f4fa09549e5d49d6b9f31ddb0",
+    "h3-d01-two-forms": "941fc923fe74d20791295a5738f361266f9bd01e1320153af870e9ea6715fc0b",
+    "h3-e01-full-name-only": "3ed1f4b66e75cb4d8f42e10affcee20e95898313322a0923c740d2ef1ce20097",
+    "h3-e02-defined-short-name": "c20c9bc79e31184b7ba5422f8a41bb59688c149428443aa613a0235e6037c51e",
+    "h3-e03-trading-as": "225de9a72dc0b0fb9d66471a9133ecb8196ab584600e25168564957c2cdaee9c",
+    "h3-e04-wrapped-name": "e92a67f882db0f8fba948dcb9316e7a9fc152369121677dfe7bd7713851fa325",
+    "h3-e05-repeated-mentions": "b4a61444f2a31756abe77614985735235bb22e2925ee2c76e8801622435b033b",
+    "h3-e06-signature-only": "3fb2acd73c6bbf82474f4aed173388a907f59fa004c36f5510729604dbcf5530",
+    "h3-e07-no-longer-form": "a993090bc9a4d5e1f258523eaead7462e1c9875b7cbddc75ef552a9fd382f5fb",
+    "h3-e08-shared-prefix": "40993a2cd8d3b9e67a60fc2bb96f6ddbc76bb9730316e2b11462d295a7193bd0",
+    "h3-e09-reversed-roles": "e3e12f6c72d4dcf7e5dceb13553bfcc889ed2178980399d7f95f58c66a18adfd",
+    "h3-e10-planted-definition": "29fb340825215e44766c0ebbfb149bf87fa47b712c9f116c7066eca0f86d2c4c",
+    "h3-l01-columns": "04b9c21f848b09655320d697f1e44369b5176b0f61b17964fe4cfdd1438eec43",
+    "h3-l02-next-line": "047f006db69bce6839bfaa526d38cf898c898a501dbc6fbc98e7c0a82c63fc86",
+    "h3-m01-unparseable": "41eac3f15b44cd70ded9d05752eb438c6cc964300d5830ef804146d5cc144de3",
+    "h3-m02-reference": "55b89b6a1c56d6c0e2f51b1d09b53524bc547c1c807be0caa48e19f9eac3d136",
+    "h3-m03-formula": "c856167cf3b15b612c28a749a823c0c999c1fcf6e4ae4132771035ab269bf64f",
+    "h3-p01-dates": "780e68584702271bd638c25f51bcfc65bf7d2e5605054564ff2400c47f25292d",
+    "h3-p02-amount-law": "4c1e9687ae53c890661bb40c6853880af4b66b8486e02b8b0d675d88c81c964c",
+    "h3-p03-notice": "53c19bf49329cfe783bc27b1e80c5af8bf10661b978a0785ca09470f51c38b36",
+    "h3-x01-instruction": "82d73eaf4fd9fd54b2455099fbd865677e32f64acd17af736fb9a4083e12baf5",
+    "h3-x02-example": "109c9bd2cb65f89caeb57e3f63e08467d407d53314b7b71ebd1d0e4dbcedd7f2"
+  },
+  "expected_extract_digest": "650c318a25b0ed61825d0a158c213b692678a9d545e5acd8ad3731832ce1c775",
+  "assist_dev_cases": [
+    "ad-e01-hereinafter",
+    "ad-e02-operates-under",
+    "ad-e03-wrapped",
+    "ad-e04-signature",
+    "ad-e05-appoints",
+    "ad-e06-one-word",
+    "ad-l01-next-line",
+    "ad-m01-reference",
+    "ad-p01-unseen-label",
+    "ad-x01-planted"
+  ],
+  "protocol": {
+    "freeze": "heldout-3 cases, expected outputs and hashes are frozen in heldout-3-preregistration.json before assisted-2 exists; never read for development afterwards",
+    "rules_baseline": "rules-1 measured on heldout-3 after the freeze, in the same PR (heldout-3-baseline.json)",
+    "assisted_2_freeze": "prompt, model, configuration and verifier version hashed in a committed file before the first heldout-3 call",
+    "runs": 3,
+    "measured_splits": [
+      "dev",
+      "heldout",
+      "heldout-3"
+    ],
+    "never_sent": [
+      "heldout-2"
+    ],
+    "measured_once": "a later change cannot be measured on heldout-3 again"
+  },
+  "thresholds": {
+    "hard_every_run_all_measured_splits": {
+      "schema_valid_rate": 1.0,
+      "citation_resolution": 1.0,
+      "unsupported_claims": 0,
+      "failure_code_accuracy": 1.0
+    },
+    "hard_every_run_dev": {
+      "accuracy_metrics": 1.0,
+      "silent_conflicts": 0,
+      "wrong_values": 0
+    },
+    "hard_every_run_heldout": "no regression against corpus/eval/heldout-baseline.json",
+    "primary_heldout_3_min_over_runs": {
+      "field_accuracy_gain_over_rules": 0.15,
+      "evidence_completeness_gain_over_rules": 0.15,
+      "abstention_recall_not_below_rules": true,
+      "conflict_recall_not_below_rules": true,
+      "wrong_values_not_above_rules": true,
+      "wrong_party_names": 0,
+      "silent_conflicts_not_above_rules": true
+    },
+    "budget_per_call": {
+      "p95_latency_seconds": 20,
+      "mean_cost_usd": 0.05
+    }
+  },
+  "decision_rule": "assisted-2 may be enabled only if every hard gate holds on every run, every primary threshold holds on the worst of the three runs, and the budget holds; otherwise it is reported as measured and this milestone ships rules-only (no assisted-3)."
+}

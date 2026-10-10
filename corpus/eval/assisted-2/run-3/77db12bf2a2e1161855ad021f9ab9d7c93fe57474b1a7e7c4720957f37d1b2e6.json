@@ -1,0 +1,14 @@
+{
+ "request_sha256": "77db12bf2a2e1161855ad021f9ab9d7c93fe57474b1a7e7c4720957f37d1b2e6",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Service provider: Wexcombe\",\"raw\":\"Wexcombe\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Client: Hartwell\",\"raw\":\"Hartwell\"}],\"effective_date\":[],\"end_date\":[],\"governing_law\":[],\"contract_value\":[],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2208,
+  "output_tokens": 127,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 1.656,
+  "error": null
+ }
+}

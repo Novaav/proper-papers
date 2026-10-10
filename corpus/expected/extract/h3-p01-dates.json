@@ -1,0 +1,87 @@
+{
+  "case": "h3-p01-dates",
+  "split": "heldout-3",
+  "outcome": "completed",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Drayton Logistics plc",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Drayton Logistics plc",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Deverill Consulting LLC",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Deverill Consulting LLC",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2027-11-05",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "November 5, 2027",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2029-11-05",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "2029-11-05",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

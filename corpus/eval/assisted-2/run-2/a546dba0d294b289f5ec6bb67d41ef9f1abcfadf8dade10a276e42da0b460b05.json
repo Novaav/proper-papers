@@ -1,0 +1,14 @@
+{
+ "request_sha256": "a546dba0d294b289f5ec6bb67d41ef9f1abcfadf8dade10a276e42da0b460b05",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Yarrowby Analytics\\nPty Ltd as supplier\",\"raw\":\"Yarrowby Analytics\\nPty Ltd\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Elmhurst Media plc as client\",\"raw\":\"Elmhurst Media plc\"}],\"effective_date\":[],\"end_date\":[],\"governing_law\":[],\"contract_value\":[],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2225,
+  "output_tokens": 159,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.005,
+  "error": null
+ }
+}

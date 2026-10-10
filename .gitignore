@@ -1,0 +1,25 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+.next/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+*.tsbuildinfo
+next-env.d.ts
+
+# OS
+.DS_Store
+
+# Local tooling and data (e.g. the disposable PostgreSQL cluster)
+.local/
+
+# Written by `next dev` when it detects an AI coding agent; not project content.
+apps/web/AGENTS.md
+apps/web/CLAUDE.md

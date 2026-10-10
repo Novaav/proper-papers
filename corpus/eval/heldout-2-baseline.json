@@ -1,0 +1,41 @@
+{
+  "dataset": "di1-service-agreements",
+  "dataset_version": "1",
+  "split": "heldout-2",
+  "cases": [
+    "h2-a1-ambiguous-commencement",
+    "h2-c1-provider-label-vs-prose",
+    "h2-c2-notice-label-vs-clause",
+    "h2-d1-same-date-two-ways",
+    "h2-l1-table",
+    "h2-l2-value-on-next-line",
+    "h2-l3-name-wraps-lines",
+    "h2-m1-provider-not-named",
+    "h2-m2-references-only",
+    "h2-m3-heading-is-not-a-name",
+    "h2-p1-vendor-client-labels",
+    "h2-p2-narrative",
+    "h2-p3-defined-terms",
+    "h2-p4-us-style",
+    "h2-x1-instruction-to-override",
+    "h2-x2-formula-not-a-value"
+  ],
+  "extractor": "rules-1",
+  "metrics": {
+    "cases": 16,
+    "failure_cases": 0,
+    "outcome_accuracy": 0.375,
+    "failure_code_accuracy": null,
+    "schema_valid_rate": 1.0,
+    "citation_resolution": 1.0,
+    "unsupported_claims": 0,
+    "field_accuracy": 0.6339,
+    "evidence_completeness": 0.3538,
+    "silent_conflicts": 1,
+    "wrong_values": 0,
+    "abstention_precision": 0.5778,
+    "abstention_recall": 1.0,
+    "conflict_precision": 1.0,
+    "conflict_recall": 0.5
+  }
+}

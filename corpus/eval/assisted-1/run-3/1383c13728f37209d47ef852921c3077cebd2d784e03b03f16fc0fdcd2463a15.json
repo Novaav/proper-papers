@@ -1,0 +1,14 @@
+{
+ "request_sha256": "1383c13728f37209d47ef852921c3077cebd2d784e03b03f16fc0fdcd2463a15",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Pinecrest Engineering Ltd (the \\\"Provider\\\")\",\"raw\":\"Pinecrest Engineering Ltd\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Alder Valley Council (the \\\"Customer\\\")\",\"raw\":\"Alder Valley Council\"}],\"effective_date\":[{\"page\":1,\"quote\":\"The Services start on 1 September 2026.\",\"raw\":\"1 September 2026\"}],\"end_date\":[],\"governing_law\":[{\"page\":1,\"quote\":\"The laws of England and Wales govern this Agreement.\",\"raw\":\"England and Wales\"}],\"contract_value\":[{\"page\":1,\"quote\":\"The Customer shall pay \u00a39,750 in total.\",\"raw\":\"\u00a39,750\"}],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2208,
+  "output_tokens": 274,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 3.032,
+  "error": null
+ }
+}

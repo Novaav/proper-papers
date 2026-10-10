@@ -1,0 +1,14 @@
+{
+ "request_sha256": "39b85bc5249e3d9bf2ee8ed3008d2f0b2172ce5cb06e9fe1d39db5b7b68f227d",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Vendor: Quillfeather Software Ltd\",\"raw\":\"Quillfeather Software Ltd\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Client: Saltmarsh Veterinary Group\",\"raw\":\"Saltmarsh Veterinary Group\"}],\"effective_date\":[{\"page\":1,\"quote\":\"Start Date: 15 June 2026\",\"raw\":\"15 June 2026\"}],\"end_date\":[{\"page\":1,\"quote\":\"Termination Date: 14 June 2029\",\"raw\":\"14 June 2029\"}],\"governing_law\":[{\"page\":1,\"quote\":\"Applicable Law: Ireland\",\"raw\":\"Ireland\"}],\"contract_value\":[{\"page\":1,\"quote\":\"Agreement Value: EUR 48,000.00\",\"raw\":\"EUR 48,000.00\"}],\"notice_period_days\":[{\"page\":1,\"quote\":\"Notice: 60 days\",\"raw\":\"60 days\"}]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2136,
+  "output_tokens": 335,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 3.124,
+  "error": null
+ }
+}

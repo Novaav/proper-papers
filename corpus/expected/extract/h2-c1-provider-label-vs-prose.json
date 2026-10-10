@@ -1,0 +1,86 @@
+{
+  "case": "h2-c1-provider-label-vs-prose",
+  "split": "heldout-2",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "conflict",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Northgate Telecom Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Northgate Telecom Ltd",
+              "occurrence": 1
+            }
+          ]
+        },
+        {
+          "value": "Southgate Telecom Ltd",
+          "evidence": [
+            {
+              "page": 2,
+              "text": "Southgate Telecom Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Bramble Lane Surgery",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Bramble Lane Surgery",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2027-06-01",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "1 June 2027",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

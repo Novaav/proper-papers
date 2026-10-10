@@ -1,0 +1,76 @@
+{
+  "case": "h3-e06-signature-only",
+  "split": "heldout-3",
+  "outcome": "completed",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Wyndham Logistics Inc.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Wyndham Logistics Inc.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Juniperhill Consulting LLC",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Juniperhill Consulting LLC",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2027-05-27",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "27 May 2027",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "case": "h3-x02-example",
+  "split": "heldout-3",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Inverleith Energy LLC",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Inverleith Energy LLC",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Whitlow Software Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Whitlow Software Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "conflict",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2026-06-25",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "25 June 2026",
+              "occurrence": 1
+            }
+          ]
+        },
+        {
+          "value": "2000-01-01",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "1 January 2000",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

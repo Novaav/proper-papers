@@ -1,0 +1,195 @@
+/* --- Tokens ---------------------------------------------------------------------
+   Warm paper in light, near-black in dark. Ink is the action colour; a cool
+   accent is for links and focus only; yellow marks evidence (and the logo's
+   highlighted line) and nothing else. States are always written in words;
+   colour only adds emphasis. The CSP allows no inline styles and only
+   same-origin fonts: everything is a class here. */
+
+@font-face {
+  font-family: "Inter Var";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/InterVariable.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light dark;
+
+  /* Surfaces */
+  --bg: #f3f2ee;
+  --canvas: #fdfcfa;
+  --surface: #ffffff;
+  --subtle: #f7f6f2;
+  --hover: #f1efe9;
+  --selected: #e9e6de;
+
+  /* Ink */
+  --text: #15140f;
+  --muted: #67645b;
+  --accent: #2b4bd0;
+  --focus: #2b4bd0;
+  --ink: #15140f;
+  --on-ink: #fdfcfa;
+
+  /* Lines */
+  --rule: #e6e3da;
+  --rule-strong: #d2cec2;
+  --btn-border: #c3beaf;
+  --border-strong: #8a867a;
+
+  /* Evidence: the highlighter */
+  --hl: #ffe58a;
+  --brand-hl: #ffd84a;
+
+  /* States: a soft tint with a deep ink of the same hue. */
+  --success: #176b3b;
+  --success-bg: #e3f4e9;
+  --attention: #7a4c00;
+  --attention-bg: #fdefd0;
+  --attention-rule: #c27a00;
+  --failed: #a3261c;
+  --failed-bg: #fdeae7;
+  --neutral: #4a4740;
+  --neutral-bg: #edebe4;
+
+  /* Depth: hairline plus a soft, short shadow. */
+  --shadow-ctl: 0 1px 1px rgb(21 20 15 / 5%);
+  --shadow-pop:
+    0 0 0 1px rgb(21 20 15 / 6%), 0 8px 24px -6px rgb(21 20 15 / 16%),
+    0 2px 6px rgb(21 20 15 / 6%);
+  --shadow-window:
+    0 0 0 1px rgb(21 20 15 / 5%), 0 1px 2px rgb(21 20 15 / 4%),
+    0 20px 48px -20px rgb(21 20 15 / 22%);
+  --highlight: inset 0 1px 0 rgb(255 255 255 / 14%);
+
+  --radius-window: 12px;
+  --radius: 10px;
+  --radius-control: 7px;
+
+  --font:
+    "Inter Var", Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --mono:
+    ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+    monospace;
+
+  /* Selection: a whisper of the accent over the neutral surface. */
+  --select-bg: color-mix(in srgb, var(--accent) 8%, var(--canvas));
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --toolbar-h: 3rem;
+}
+
+/* Dark theme: by the system preference unless the visitor chose light, or by
+   choice (the theme toggle sets data-theme on <html>). The two blocks below carry
+   the same values. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #08090a;
+    --canvas: #0d0e10;
+    --surface: #131417;
+    --subtle: #101114;
+    --hover: #17181c;
+    --selected: #1f2126;
+    --select-bg: color-mix(in srgb, var(--accent) 17%, var(--canvas));
+
+    --text: #f2f2ef;
+    --muted: #9b9b94;
+    --accent: #9aa8ff;
+    --focus: #9aa8ff;
+    --ink: #f2f2ef;
+    --on-ink: #0d0e10;
+
+    --rule: #1d1e22;
+    --rule-strong: #2b2d32;
+    --btn-border: #373940;
+    --border-strong: #707279;
+
+    --hl: #5f4d0f;
+    --brand-hl: #ffd84a;
+
+    --success: #7fd3a1;
+    --success-bg: #12291c;
+    --attention: #f1b24c;
+    --attention-bg: #2e2312;
+    --attention-rule: #f1b24c;
+    --failed: #ff8c82;
+    --failed-bg: #331815;
+    --neutral: #c5c5be;
+    --neutral-bg: #202228;
+
+    --shadow-ctl: none;
+    --shadow-pop:
+      0 0 0 1px rgb(255 255 255 / 8%), 0 16px 40px -8px rgb(0 0 0 / 70%);
+    --shadow-window:
+      0 0 0 1px rgb(255 255 255 / 6%), 0 28px 56px -24px rgb(0 0 0 / 75%);
+    --highlight: inset 0 1px 0 rgb(255 255 255 / 0%);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #08090a;
+  --canvas: #0d0e10;
+  --surface: #131417;
+  --subtle: #101114;
+  --hover: #17181c;
+  --selected: #1f2126;
+  --select-bg: color-mix(in srgb, var(--accent) 17%, var(--canvas));
+
+  --text: #f2f2ef;
+  --muted: #9b9b94;
+  --accent: #9aa8ff;
+  --focus: #9aa8ff;
+  --ink: #f2f2ef;
+  --on-ink: #0d0e10;
+
+  --rule: #1d1e22;
+  --rule-strong: #2b2d32;
+  --btn-border: #373940;
+  --border-strong: #707279;
+
+  --hl: #5f4d0f;
+  --brand-hl: #ffd84a;
+
+  --success: #7fd3a1;
+  --success-bg: #12291c;
+  --attention: #f1b24c;
+  --attention-bg: #2e2312;
+  --attention-rule: #f1b24c;
+  --failed: #ff8c82;
+  --failed-bg: #331815;
+  --neutral: #c5c5be;
+  --neutral-bg: #202228;
+
+  --shadow-ctl: none;
+  --shadow-pop:
+    0 0 0 1px rgb(255 255 255 / 8%), 0 16px 40px -8px rgb(0 0 0 / 70%);
+  --shadow-window:
+    0 0 0 1px rgb(255 255 255 / 6%), 0 28px 56px -24px rgb(0 0 0 / 75%);
+  --highlight: inset 0 1px 0 rgb(255 255 255 / 0%);
+}
+
+/* Workspace identity is neutral: the same tile for every workspace. Colour is
+   reserved for state, evidence and the active place. */
+:root {
+  --glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23706c62' stroke-width='1.4' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='4' height='4' rx='1'/%3E%3Crect x='9' y='3' width='4' height='4' rx='1'/%3E%3Crect x='3' y='9' width='4' height='4' rx='1'/%3E%3Crect x='9' y='9' width='4' height='4' rx='1'/%3E%3C/svg%3E");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23a3a39b' stroke-width='1.4' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='4' height='4' rx='1'/%3E%3Crect x='9' y='3' width='4' height='4' rx='1'/%3E%3Crect x='3' y='9' width='4' height='4' rx='1'/%3E%3Crect x='9' y='9' width='4' height='4' rx='1'/%3E%3C/svg%3E");
+  }
+}
+
+:root[data-theme="dark"] {
+  --glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23a3a39b' stroke-width='1.4' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='4' height='4' rx='1'/%3E%3Crect x='9' y='3' width='4' height='4' rx='1'/%3E%3Crect x='3' y='9' width='4' height='4' rx='1'/%3E%3Crect x='9' y='9' width='4' height='4' rx='1'/%3E%3C/svg%3E");
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}

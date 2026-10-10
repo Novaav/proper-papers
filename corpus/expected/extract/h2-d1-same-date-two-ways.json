@@ -1,0 +1,81 @@
+{
+  "case": "h2-d1-same-date-two-ways",
+  "split": "heldout-2",
+  "outcome": "completed",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Quarry Hill Archives Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Quarry Hill Archives Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Netherby Parish Council",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Netherby Parish Council",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2027-07-01",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "1 July 2027",
+              "occurrence": 1
+            },
+            {
+              "page": 1,
+              "text": "2027-07-01",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

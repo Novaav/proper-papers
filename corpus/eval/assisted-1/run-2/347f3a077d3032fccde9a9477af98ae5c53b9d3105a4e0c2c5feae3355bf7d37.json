@@ -1,0 +1,14 @@
+{
+ "request_sha256": "347f3a077d3032fccde9a9477af98ae5c53b9d3105a4e0c2c5feae3355bf7d37",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Kestrel Facilities Ltd, which provides the services\",\"raw\":\"Kestrel Facilities Ltd\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Marlow Community Trust, which receives them\",\"raw\":\"Marlow Community Trust\"}],\"effective_date\":[{\"page\":1,\"quote\":\"The services begin on 1 November 2026\",\"raw\":\"1 November 2026\"}],\"end_date\":[{\"page\":1,\"quote\":\"finish on 31 October 2027\",\"raw\":\"31 October 2027\"}],\"governing_law\":[{\"page\":1,\"quote\":\"The law of Scotland applies to this contract.\",\"raw\":\"Scotland\"}],\"contract_value\":[{\"page\":1,\"quote\":\"The client will pay a total of GBP 18,500.00.\",\"raw\":\"GBP 18,500.00\"}],\"notice_period_days\":[{\"page\":1,\"quote\":\"Either party may terminate on 45 days written notice.\",\"raw\":\"45 days\"}]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2160,
+  "output_tokens": 340,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.61,
+  "error": null
+ }
+}

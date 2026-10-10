@@ -1,0 +1,123 @@
+{
+  "case": "dev-n3-multipage",
+  "split": "dev",
+  "outcome": "completed",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Larkspur Cloud Services Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Larkspur Cloud Services Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Meridian Health Trust",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Meridian Health Trust",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2026-01-02",
+          "evidence": [
+            {
+              "page": 2,
+              "text": "2 January 2026",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2026-12-31",
+          "evidence": [
+            {
+              "page": 2,
+              "text": "31 December 2026",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "governing_law": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Scotland",
+          "evidence": [
+            {
+              "page": 3,
+              "text": "Scotland",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "contract_value": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": {
+            "amount": "75000.00",
+            "currency": "GBP"
+          },
+          "evidence": [
+            {
+              "page": 3,
+              "text": "GBP 75,000.00",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "notice_period_days": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": 30,
+          "evidence": [
+            {
+              "page": 3,
+              "text": "30 days",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

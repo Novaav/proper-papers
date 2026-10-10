@@ -1,0 +1,90 @@
+{
+  "case": "ho-n3-dotted-leaders",
+  "split": "heldout",
+  "outcome": "completed",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Tidewater Systems Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Tidewater Systems Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Greyfield Logistics Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Greyfield Logistics Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2027-01-02",
+          "evidence": [
+            {
+              "page": 2,
+              "text": "2 January 2027",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": {
+            "amount": "64000.00",
+            "currency": "EUR"
+          },
+          "evidence": [
+            {
+              "page": 2,
+              "text": "EUR 64,000.00",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

@@ -1,0 +1,477 @@
+{
+ "configuration": {
+  "extractor": "assisted-2+342453203207",
+  "prompt": "assisted-2",
+  "prompt_sha256": "b50bca739e5cb2bbd30293843b38f5f5983e9f9ddd8bf46b6b53b9552c78eada",
+  "config_sha256": "342453203207ac8f36d76ec190fc4c4fe2a7941fd3e8cbe9854549499ff1451b",
+  "model": "claude-sonnet-5-5",
+  "effort": "low",
+  "max_tokens": 1024,
+  "inference_geo": "global",
+  "sampling": "default",
+  "output_schema_sha256": "a794946f154056af3b3683c0792fd6e19d651b3d8fba230e4af1987135747a2a",
+  "sdk": "anthropic 1.11.0",
+  "verifier": "2"
+ },
+ "runs": [
+  {
+   "metrics": {
+    "dev": {
+     "cases": 22,
+     "failure_cases": 6,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": 1.0,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 1.0,
+     "evidence_completeness": 1.0,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "wrong_party_names": 0,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout": {
+     "cases": 8,
+     "failure_cases": 0,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9464,
+     "evidence_completeness": 0.9143,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "wrong_party_names": 0,
+     "abstention_precision": 0.9615,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout-3": {
+     "cases": 24,
+     "failure_cases": 0,
+     "outcome_accuracy": 0.9583,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9762,
+     "evidence_completeness": 0.9459,
+     "silent_conflicts": 3,
+     "wrong_values": 0,
+     "wrong_party_names": 0,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": null,
+     "conflict_recall": 0.0
+    }
+   },
+   "calls": {
+    "dev": {
+     "documents": 16,
+     "calls": 11,
+     "statuses": {
+      "not_needed": 5,
+      "ok": 11
+     },
+     "proposed_mentions": 0,
+     "rejected_mentions": 0,
+     "model_fields": 0,
+     "input_tokens": 24396,
+     "output_tokens": 671,
+     "cost_usd": 0.055502,
+     "mean_cost_per_call_usd": 0.005046,
+     "p95_latency_seconds": 2.865,
+     "distinct_requests": 10,
+     "distinct_cost_usd": 0.050486,
+     "entity_rejected_mentions": 0
+    },
+    "heldout": {
+     "documents": 8,
+     "calls": 8,
+     "statuses": {
+      "ok": 8
+     },
+     "proposed_mentions": 15,
+     "rejected_mentions": 0,
+     "model_fields": 15,
+     "input_tokens": 18030,
+     "output_tokens": 1116,
+     "cost_usd": 0.04722,
+     "mean_cost_per_call_usd": 0.005902,
+     "p95_latency_seconds": 3.009,
+     "distinct_requests": 8,
+     "distinct_cost_usd": 0.04722,
+     "entity_rejected_mentions": 0
+    },
+    "heldout-3": {
+     "documents": 24,
+     "calls": 24,
+     "statuses": {
+      "ok": 24
+     },
+     "proposed_mentions": 37,
+     "rejected_mentions": 0,
+     "model_fields": 36,
+     "input_tokens": 53725,
+     "output_tokens": 3120,
+     "cost_usd": 0.13865,
+     "mean_cost_per_call_usd": 0.005777,
+     "p95_latency_seconds": 2.801,
+     "distinct_requests": 24,
+     "distinct_cost_usd": 0.13865,
+     "entity_rejected_mentions": 0
+    }
+   },
+   "models": [
+    "claude-sonnet-5-5"
+   ],
+   "problems": {
+    "ho-n2-by-and-between": [
+     "contract_value: expected found/None, got unknown/unparseable",
+     "notice_period_days: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "ho-a1-ambiguous-dotted-date": [
+     "effective_date: expected unknown/ambiguous, got unknown/unparseable"
+    ],
+    "h3-m01-unparseable": [
+     "end_date: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "h3-c01-end-dates": [
+     "end_date: expected conflict/None, got found/None"
+    ],
+    "h3-c02-notice": [
+     "notice_period_days: expected conflict/None, got found/None"
+    ],
+    "h3-x02-example": [
+     "outcome completed, expected needs_review",
+     "effective_date: expected conflict/None, got found/None"
+    ]
+   },
+   "hard_failures": []
+  },
+  {
+   "metrics": {
+    "dev": {
+     "cases": 22,
+     "failure_cases": 6,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": 1.0,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 1.0,
+     "evidence_completeness": 1.0,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "wrong_party_names": 0,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout": {
+     "cases": 8,
+     "failure_cases": 0,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9464,
+     "evidence_completeness": 0.9143,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "wrong_party_names": 0,
+     "abstention_precision": 0.9615,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout-3": {
+     "cases": 24,
+     "failure_cases": 0,
+     "outcome_accuracy": 0.9583,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9762,
+     "evidence_completeness": 0.9459,
+     "silent_conflicts": 3,
+     "wrong_values": 0,
+     "wrong_party_names": 0,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": null,
+     "conflict_recall": 0.0
+    }
+   },
+   "calls": {
+    "dev": {
+     "documents": 16,
+     "calls": 11,
+     "statuses": {
+      "not_needed": 5,
+      "ok": 11
+     },
+     "proposed_mentions": 0,
+     "rejected_mentions": 0,
+     "model_fields": 0,
+     "input_tokens": 24396,
+     "output_tokens": 671,
+     "cost_usd": 0.055502,
+     "mean_cost_per_call_usd": 0.005046,
+     "p95_latency_seconds": 2.871,
+     "distinct_requests": 10,
+     "distinct_cost_usd": 0.050486,
+     "entity_rejected_mentions": 0
+    },
+    "heldout": {
+     "documents": 8,
+     "calls": 8,
+     "statuses": {
+      "ok": 8
+     },
+     "proposed_mentions": 15,
+     "rejected_mentions": 0,
+     "model_fields": 15,
+     "input_tokens": 18030,
+     "output_tokens": 1116,
+     "cost_usd": 0.04722,
+     "mean_cost_per_call_usd": 0.005902,
+     "p95_latency_seconds": 2.902,
+     "distinct_requests": 8,
+     "distinct_cost_usd": 0.04722,
+     "entity_rejected_mentions": 0
+    },
+    "heldout-3": {
+     "documents": 24,
+     "calls": 24,
+     "statuses": {
+      "ok": 24
+     },
+     "proposed_mentions": 37,
+     "rejected_mentions": 0,
+     "model_fields": 36,
+     "input_tokens": 53725,
+     "output_tokens": 3120,
+     "cost_usd": 0.13865,
+     "mean_cost_per_call_usd": 0.005777,
+     "p95_latency_seconds": 2.457,
+     "distinct_requests": 24,
+     "distinct_cost_usd": 0.13865,
+     "entity_rejected_mentions": 0
+    }
+   },
+   "models": [
+    "claude-sonnet-5-5"
+   ],
+   "problems": {
+    "ho-n2-by-and-between": [
+     "contract_value: expected found/None, got unknown/unparseable",
+     "notice_period_days: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "ho-a1-ambiguous-dotted-date": [
+     "effective_date: expected unknown/ambiguous, got unknown/unparseable"
+    ],
+    "h3-m01-unparseable": [
+     "end_date: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "h3-c01-end-dates": [
+     "end_date: expected conflict/None, got found/None"
+    ],
+    "h3-c02-notice": [
+     "notice_period_days: expected conflict/None, got found/None"
+    ],
+    "h3-x02-example": [
+     "outcome completed, expected needs_review",
+     "effective_date: expected conflict/None, got found/None"
+    ]
+   },
+   "hard_failures": []
+  },
+  {
+   "metrics": {
+    "dev": {
+     "cases": 22,
+     "failure_cases": 6,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": 1.0,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 1.0,
+     "evidence_completeness": 1.0,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "wrong_party_names": 0,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout": {
+     "cases": 8,
+     "failure_cases": 0,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9464,
+     "evidence_completeness": 0.9143,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "wrong_party_names": 0,
+     "abstention_precision": 0.9615,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout-3": {
+     "cases": 24,
+     "failure_cases": 0,
+     "outcome_accuracy": 0.9583,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9762,
+     "evidence_completeness": 0.9459,
+     "silent_conflicts": 3,
+     "wrong_values": 0,
+     "wrong_party_names": 0,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": null,
+     "conflict_recall": 0.0
+    }
+   },
+   "calls": {
+    "dev": {
+     "documents": 16,
+     "calls": 11,
+     "statuses": {
+      "not_needed": 5,
+      "ok": 11
+     },
+     "proposed_mentions": 0,
+     "rejected_mentions": 0,
+     "model_fields": 0,
+     "input_tokens": 24396,
+     "output_tokens": 671,
+     "cost_usd": 0.055502,
+     "mean_cost_per_call_usd": 0.005046,
+     "p95_latency_seconds": 2.921,
+     "distinct_requests": 10,
+     "distinct_cost_usd": 0.050486,
+     "entity_rejected_mentions": 0
+    },
+    "heldout": {
+     "documents": 8,
+     "calls": 8,
+     "statuses": {
+      "ok": 8
+     },
+     "proposed_mentions": 15,
+     "rejected_mentions": 0,
+     "model_fields": 15,
+     "input_tokens": 18030,
+     "output_tokens": 1116,
+     "cost_usd": 0.04722,
+     "mean_cost_per_call_usd": 0.005902,
+     "p95_latency_seconds": 3.103,
+     "distinct_requests": 8,
+     "distinct_cost_usd": 0.04722,
+     "entity_rejected_mentions": 0
+    },
+    "heldout-3": {
+     "documents": 24,
+     "calls": 24,
+     "statuses": {
+      "ok": 24
+     },
+     "proposed_mentions": 37,
+     "rejected_mentions": 0,
+     "model_fields": 36,
+     "input_tokens": 53725,
+     "output_tokens": 3120,
+     "cost_usd": 0.13865,
+     "mean_cost_per_call_usd": 0.005777,
+     "p95_latency_seconds": 2.649,
+     "distinct_requests": 24,
+     "distinct_cost_usd": 0.13865,
+     "entity_rejected_mentions": 0
+    }
+   },
+   "models": [
+    "claude-sonnet-5-5"
+   ],
+   "problems": {
+    "ho-n2-by-and-between": [
+     "contract_value: expected found/None, got unknown/unparseable",
+     "notice_period_days: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "ho-a1-ambiguous-dotted-date": [
+     "effective_date: expected unknown/ambiguous, got unknown/unparseable"
+    ],
+    "h3-m01-unparseable": [
+     "end_date: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "h3-c01-end-dates": [
+     "end_date: expected conflict/None, got found/None"
+    ],
+    "h3-c02-notice": [
+     "notice_period_days: expected conflict/None, got found/None"
+    ],
+    "h3-x02-example": [
+     "outcome completed, expected needs_review",
+     "effective_date: expected conflict/None, got found/None"
+    ]
+   },
+   "hard_failures": []
+  }
+ ],
+ "decision": {
+  "runs_measured": 3,
+  "rules_1": {
+   "field_accuracy": 0.7679,
+   "evidence_completeness": 0.4459,
+   "abstention_recall": 1.0,
+   "conflict_recall": 0.0,
+   "wrong_values": 0,
+   "silent_conflicts": 2,
+   "wrong_party_names": 0
+  },
+  "worst": {
+   "field_accuracy": 0.9762,
+   "evidence_completeness": 0.9459,
+   "abstention_recall": 1.0,
+   "conflict_recall": 0.0,
+   "wrong_values": 0,
+   "silent_conflicts": 3,
+   "wrong_party_names": 0,
+   "p95_latency_seconds": 2.801,
+   "mean_cost_per_call_usd": 0.005777
+  },
+  "checks": {
+   "field_accuracy_gain_over_rules": true,
+   "evidence_completeness_gain_over_rules": true,
+   "abstention_recall_not_below_rules": true,
+   "conflict_recall_not_below_rules": true,
+   "wrong_values_not_above_rules": true,
+   "silent_conflicts_not_above_rules": false,
+   "wrong_party_names": true,
+   "budget_p95_latency": true,
+   "budget_mean_cost": true,
+   "hard_gates_every_run": true
+  },
+  "enable_assistance": false
+ }
+}

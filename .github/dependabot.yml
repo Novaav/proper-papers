@@ -1,0 +1,22 @@
+# Dependabot security updates only. `open-pull-requests-limit: 0` turns off
+# routine version-update pull requests; security-update pull requests are not
+# affected by this limit and use these directories. Requires "Dependabot
+# alerts" and "Dependabot security updates" to be enabled in the repository
+# settings.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/apps/web"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+  - package-ecosystem: "uv"
+    directory: "/apps/api"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0

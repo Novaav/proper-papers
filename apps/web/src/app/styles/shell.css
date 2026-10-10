@@ -1,0 +1,614 @@
+/* --- Shell: site header, signed-in frame, sidebar, toolbar, popovers -------------- */
+
+/* Site header: landing and the pages outside the signed-in frame. */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid var(--rule);
+  background: var(--canvas);
+}
+
+.app-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  min-height: 3.5rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  font-size: 0.9375rem;
+  font-weight: 620;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+}
+
+.brand svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.brand-tile {
+  fill: var(--ink);
+}
+
+.brand-hl {
+  fill: var(--brand-hl);
+}
+
+.brand-line {
+  stroke: var(--on-ink);
+}
+
+.app-nav ul {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0 0.85rem;
+  border: 1px solid var(--btn-border);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  box-shadow: var(--shadow-ctl);
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 120ms ease;
+}
+
+.app-nav a:hover {
+  background: var(--hover);
+}
+
+/* Theme toggle: both states are in the HTML; the one matching the theme in
+   effect is shown (the visitor's data-theme on <html>, else the system). */
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 1.75rem;
+  padding: 0 0.5rem;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: none;
+  box-shadow: none;
+  color: var(--text);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+
+.theme-toggle:hover {
+  background: var(--hover);
+}
+
+.theme-toggle:active {
+  background: var(--selected);
+}
+
+.theme-toggle:focus-visible {
+  outline-offset: -2px;
+}
+
+.theme-toggle--rail {
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  min-height: 0;
+  padding: 0;
+}
+
+.theme-toggle--header {
+  min-height: 2rem;
+  border: 1px solid var(--btn-border);
+  background: var(--surface);
+  box-shadow: var(--shadow-ctl);
+}
+
+.theme-toggle--header:hover {
+  background: var(--hover);
+}
+
+.theme-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.theme-state svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--muted);
+}
+
+.theme-state--dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-state--dark {
+  display: inline-flex;
+}
+
+:root[data-theme="dark"] .theme-state--light {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-state--dark {
+    display: inline-flex;
+  }
+
+  :root:not([data-theme]) .theme-state--light {
+    display: none;
+  }
+}
+
+/* The control is the icon alone; the name stays for assistive technology. */
+.theme-toggle .theme-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Signed-in frame: sidebar, then the work surface. */
+body:has(.app-frame) > .app-header {
+  display: none;
+}
+
+.app-frame {
+  display: grid;
+  grid-template-columns: 14.5rem minmax(0, 1fr);
+  min-height: 100vh;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.rail {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  height: calc(100vh - 1rem);
+  padding: 0.5rem 0.75rem;
+}
+
+.rail-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.25rem;
+  padding: 0 0.5rem;
+  border-radius: var(--radius-control);
+  color: var(--text);
+  font-size: 0.9375rem;
+  font-weight: 620;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+}
+
+.rail-brand svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.rail-nav {
+  display: grid;
+  gap: 1rem;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.rail-nav ul {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rail-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 0.35rem;
+  padding: 0 0.5rem;
+  color: var(--muted);
+}
+
+.rail-label + ul {
+  margin-top: 0;
+}
+
+.rail-count {
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--neutral-bg);
+  color: var(--neutral);
+  font-size: 0.75rem;
+  letter-spacing: 0;
+}
+
+.rail-nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 1.75rem;
+  padding: 0 0.5rem;
+  border-radius: var(--radius-control);
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 120ms ease;
+}
+
+.rail-nav a:hover {
+  background: var(--hover);
+}
+
+.rail-nav a:active {
+  background: var(--selected);
+}
+
+.rail-nav a:focus-visible {
+  outline-offset: -2px;
+}
+
+.rail-nav a[aria-current] {
+  background: var(--select-bg);
+  font-weight: 600;
+}
+
+.rail-nav a[aria-current]::after {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--accent);
+}
+
+.rail-nav svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--muted);
+}
+
+.rail-nav a[aria-current] svg {
+  color: var(--text);
+}
+
+.rail-workspaces a {
+  font-weight: 450;
+}
+
+.rail-dot {
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 0.25rem;
+  border-radius: 50%;
+  background: var(--rule-strong);
+  opacity: 0.6;
+}
+
+.rail-workspaces a[aria-current] .rail-dot {
+  background: var(--text);
+  opacity: 1;
+}
+
+.rail-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rail-foot {
+  display: grid;
+  justify-items: start;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.rail-foot .theme-toggle {
+  margin-left: 0.25rem;
+}
+
+.rail-note {
+  margin: 0;
+  padding: 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.app-content {
+  min-width: 0;
+  min-height: calc(100vh - 1rem);
+  border-radius: var(--radius-window);
+  background: var(--canvas);
+  box-shadow: var(--shadow-window);
+}
+
+.app-content > main {
+  animation: settle 200ms ease-out;
+}
+
+/* Toolbar: where you are, and this page's actions. */
+.toolbar {
+  position: relative;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  min-height: var(--toolbar-h);
+  padding: 0.35rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  border-radius: var(--radius-window) var(--radius-window) 0 0;
+  background: var(--canvas);
+}
+
+.toolbar-actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toolbar-actions form {
+  margin: 0;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.breadcrumbs li + li::before {
+  content: "/";
+  margin: 0 0.2rem;
+  color: var(--rule-strong);
+}
+
+.breadcrumbs a,
+.breadcrumbs [aria-current] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0 0.4rem;
+  border-radius: var(--radius-control);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.breadcrumbs a {
+  color: var(--muted);
+  text-decoration: none;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.breadcrumbs a:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+
+.breadcrumbs a:active {
+  background: var(--selected);
+}
+
+.breadcrumbs [aria-current] {
+  color: var(--text);
+  font-weight: 580;
+}
+
+.breadcrumbs .crumb-back {
+  flex: none;
+  justify-content: center;
+  width: 1.75rem;
+  padding: 0;
+  border: 1px solid var(--rule-strong);
+  background: var(--surface);
+  box-shadow: var(--shadow-ctl);
+  color: var(--text);
+}
+
+.breadcrumbs .crumb-back svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+/* Popovers: a toolbar button that opens a small panel. */
+.popover {
+  position: relative;
+}
+
+.popover > summary {
+  cursor: pointer;
+  user-select: none;
+}
+
+.popover-panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 20;
+  width: min(24rem, calc(100vw - 1.5rem));
+  padding: 1rem 1.1rem 1.1rem;
+  border-radius: var(--radius-window);
+  background: var(--surface);
+  box-shadow: var(--shadow-pop);
+}
+
+details[open] > .popover-panel {
+  animation: reveal 160ms ease-out;
+}
+
+.popover-panel h2 {
+  margin-bottom: 0.8rem;
+  font-size: 0.9375rem;
+}
+
+.popover-panel form > * + * {
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 62rem) {
+  .app-frame {
+    grid-template-columns: 13rem minmax(0, 1fr);
+  }
+}
+
+/* Phones: the sidebar becomes a top bar whose links scroll sideways. */
+@media (max-width: 48rem) {
+  .app-header-inner {
+    padding-inline: 1rem;
+  }
+
+  .app-frame {
+    display: block;
+    padding: 0;
+  }
+
+  .rail {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 1rem;
+    height: auto;
+    padding: 0.625rem 0.75rem 0.5rem;
+    background: var(--bg);
+  }
+
+  /* The mark sits where the site header puts it (16px from the edge). */
+  .rail-brand {
+    padding-inline: 0.25rem;
+  }
+
+  .rail-label,
+  .rail-note {
+    display: none;
+  }
+
+  /* Brand left, theme toggle right, then the two links on their own row. */
+  .rail-brand {
+    order: 1;
+  }
+
+  .rail-foot {
+    order: 2;
+    margin: 0 0 0 auto;
+  }
+
+  .rail-foot .theme-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0;
+  }
+
+  .rail-nav {
+    order: 3;
+    display: flex;
+    flex: 1 1 100%;
+    gap: 0.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+  }
+
+  .rail-nav ul {
+    display: flex;
+    flex: none;
+    gap: 0.25rem;
+  }
+
+  /* Two primary destinations only; each workspace is one tap from Workspaces. */
+  /* Specificity matters: `.rail-nav ul` above would otherwise win. */
+  .rail-nav .rail-workspaces {
+    display: none;
+  }
+
+  .rail-nav a {
+    white-space: nowrap;
+  }
+
+  .app-content {
+    min-height: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .toolbar {
+    padding-inline: 0.75rem;
+    border-radius: 0;
+  }
+
+  .breadcrumbs ol {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  /* Only where you are; the back button goes to the parent. */
+  .breadcrumbs li:not(:last-child),
+  .breadcrumbs li + li::before {
+    display: none;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+  }
+
+  .popover-panel {
+    position: fixed;
+    top: calc(var(--toolbar-h) + 3.25rem);
+    right: 0.75rem;
+    left: 0.75rem;
+    width: auto;
+  }
+}

@@ -1,0 +1,437 @@
+{
+ "configuration": {
+  "extractor": "assisted-1+beb688b3d3c9",
+  "prompt": "assisted-1",
+  "prompt_sha256": "b11c29ec9e266a16e12a3d960b0fe9ed6109ddf21e327284d07ac7610de51f2f",
+  "config_sha256": "beb688b3d3c9504890a51b397e0b42a39c8014d482e35db234d922ff5274e0d2",
+  "model": "claude-sonnet-5-5",
+  "effort": "low",
+  "max_tokens": 1024,
+  "inference_geo": "global",
+  "sampling": "default",
+  "output_schema_sha256": "a794946f154056af3b3683c0792fd6e19d651b3d8fba230e4af1987135747a2a",
+  "sdk": "anthropic 1.11.0"
+ },
+ "runs": [
+  {
+   "metrics": {
+    "dev": {
+     "cases": 22,
+     "failure_cases": 6,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": 1.0,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 1.0,
+     "evidence_completeness": 1.0,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout": {
+     "cases": 8,
+     "failure_cases": 0,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9464,
+     "evidence_completeness": 0.9143,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "abstention_precision": 0.9615,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout-2": {
+     "cases": 16,
+     "failure_cases": 0,
+     "outcome_accuracy": 0.9375,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9643,
+     "evidence_completeness": 0.9385,
+     "silent_conflicts": 1,
+     "wrong_values": 2,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 0.5
+    }
+   },
+   "calls": {
+    "dev": {
+     "documents": 16,
+     "calls": 11,
+     "statuses": {
+      "not_needed": 5,
+      "ok": 11
+     },
+     "proposed_mentions": 0,
+     "rejected_mentions": 0,
+     "model_fields": 0,
+     "input_tokens": 22757,
+     "output_tokens": 671,
+     "cost_usd": 0.052224,
+     "mean_cost_per_call_usd": 0.004748,
+     "p95_latency_seconds": 2.64
+    },
+    "heldout": {
+     "documents": 8,
+     "calls": 8,
+     "statuses": {
+      "ok": 8
+     },
+     "proposed_mentions": 15,
+     "rejected_mentions": 0,
+     "model_fields": 15,
+     "input_tokens": 16838,
+     "output_tokens": 1116,
+     "cost_usd": 0.044836,
+     "mean_cost_per_call_usd": 0.005605,
+     "p95_latency_seconds": 3.688
+    },
+    "heldout-2": {
+     "documents": 16,
+     "calls": 16,
+     "statuses": {
+      "ok": 16
+     },
+     "proposed_mentions": 40,
+     "rejected_mentions": 0,
+     "model_fields": 39,
+     "input_tokens": 33583,
+     "output_tokens": 2596,
+     "cost_usd": 0.093126,
+     "mean_cost_per_call_usd": 0.00582,
+     "p95_latency_seconds": 3.583
+    }
+   },
+   "models": [
+    "claude-sonnet-5-5"
+   ],
+   "problems": {
+    "ho-n2-by-and-between": [
+     "contract_value: expected found/None, got unknown/unparseable",
+     "notice_period_days: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "ho-a1-ambiguous-dotted-date": [
+     "effective_date: expected unknown/ambiguous, got unknown/unparseable"
+    ],
+    "h2-p3-defined-terms": [
+     "provider_name: expected found/None, got found/None (values differ)",
+     "provider_name: value not in the expected output",
+     "customer_name: expected found/None, got found/None (values differ)",
+     "customer_name: value not in the expected output"
+    ],
+    "h2-l2-value-on-next-line": [
+     "notice_period_days: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "h2-c1-provider-label-vs-prose": [
+     "outcome completed, expected needs_review",
+     "provider_name: expected conflict/None, got found/None"
+    ]
+   },
+   "hard_failures": []
+  },
+  {
+   "metrics": {
+    "dev": {
+     "cases": 22,
+     "failure_cases": 6,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": 1.0,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 1.0,
+     "evidence_completeness": 1.0,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout": {
+     "cases": 8,
+     "failure_cases": 0,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9464,
+     "evidence_completeness": 0.9143,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "abstention_precision": 0.9615,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout-2": {
+     "cases": 16,
+     "failure_cases": 0,
+     "outcome_accuracy": 0.9375,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9643,
+     "evidence_completeness": 0.9385,
+     "silent_conflicts": 1,
+     "wrong_values": 2,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 0.5
+    }
+   },
+   "calls": {
+    "dev": {
+     "documents": 16,
+     "calls": 11,
+     "statuses": {
+      "not_needed": 5,
+      "ok": 11
+     },
+     "proposed_mentions": 0,
+     "rejected_mentions": 0,
+     "model_fields": 0,
+     "input_tokens": 22757,
+     "output_tokens": 671,
+     "cost_usd": 0.052224,
+     "mean_cost_per_call_usd": 0.004748,
+     "p95_latency_seconds": 2.854
+    },
+    "heldout": {
+     "documents": 8,
+     "calls": 8,
+     "statuses": {
+      "ok": 8
+     },
+     "proposed_mentions": 15,
+     "rejected_mentions": 0,
+     "model_fields": 15,
+     "input_tokens": 16838,
+     "output_tokens": 1116,
+     "cost_usd": 0.044836,
+     "mean_cost_per_call_usd": 0.005605,
+     "p95_latency_seconds": 3.978
+    },
+    "heldout-2": {
+     "documents": 16,
+     "calls": 16,
+     "statuses": {
+      "ok": 16
+     },
+     "proposed_mentions": 40,
+     "rejected_mentions": 0,
+     "model_fields": 39,
+     "input_tokens": 33583,
+     "output_tokens": 2596,
+     "cost_usd": 0.093126,
+     "mean_cost_per_call_usd": 0.00582,
+     "p95_latency_seconds": 3.124
+    }
+   },
+   "models": [
+    "claude-sonnet-5-5"
+   ],
+   "problems": {
+    "ho-n2-by-and-between": [
+     "contract_value: expected found/None, got unknown/unparseable",
+     "notice_period_days: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "ho-a1-ambiguous-dotted-date": [
+     "effective_date: expected unknown/ambiguous, got unknown/unparseable"
+    ],
+    "h2-p3-defined-terms": [
+     "provider_name: expected found/None, got found/None (values differ)",
+     "provider_name: value not in the expected output",
+     "customer_name: expected found/None, got found/None (values differ)",
+     "customer_name: value not in the expected output"
+    ],
+    "h2-l2-value-on-next-line": [
+     "notice_period_days: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "h2-c1-provider-label-vs-prose": [
+     "outcome completed, expected needs_review",
+     "provider_name: expected conflict/None, got found/None"
+    ]
+   },
+   "hard_failures": []
+  },
+  {
+   "metrics": {
+    "dev": {
+     "cases": 22,
+     "failure_cases": 6,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": 1.0,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 1.0,
+     "evidence_completeness": 1.0,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout": {
+     "cases": 8,
+     "failure_cases": 0,
+     "outcome_accuracy": 1.0,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9464,
+     "evidence_completeness": 0.9143,
+     "silent_conflicts": 0,
+     "wrong_values": 0,
+     "abstention_precision": 0.9615,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 1.0
+    },
+    "heldout-2": {
+     "cases": 16,
+     "failure_cases": 0,
+     "outcome_accuracy": 0.9375,
+     "failure_code_accuracy": null,
+     "schema_valid_rate": 1.0,
+     "citation_resolution": 1.0,
+     "unsupported_claims": 0,
+     "field_accuracy": 0.9643,
+     "evidence_completeness": 0.9385,
+     "silent_conflicts": 1,
+     "wrong_values": 2,
+     "abstention_precision": 1.0,
+     "abstention_recall": 1.0,
+     "conflict_precision": 1.0,
+     "conflict_recall": 0.5
+    }
+   },
+   "calls": {
+    "dev": {
+     "documents": 16,
+     "calls": 11,
+     "statuses": {
+      "not_needed": 5,
+      "ok": 11
+     },
+     "proposed_mentions": 0,
+     "rejected_mentions": 0,
+     "model_fields": 0,
+     "input_tokens": 22757,
+     "output_tokens": 671,
+     "cost_usd": 0.052224,
+     "mean_cost_per_call_usd": 0.004748,
+     "p95_latency_seconds": 2.165
+    },
+    "heldout": {
+     "documents": 8,
+     "calls": 8,
+     "statuses": {
+      "ok": 8
+     },
+     "proposed_mentions": 15,
+     "rejected_mentions": 0,
+     "model_fields": 15,
+     "input_tokens": 16838,
+     "output_tokens": 1116,
+     "cost_usd": 0.044836,
+     "mean_cost_per_call_usd": 0.005605,
+     "p95_latency_seconds": 3.032
+    },
+    "heldout-2": {
+     "documents": 16,
+     "calls": 16,
+     "statuses": {
+      "ok": 16
+     },
+     "proposed_mentions": 40,
+     "rejected_mentions": 0,
+     "model_fields": 39,
+     "input_tokens": 33583,
+     "output_tokens": 2590,
+     "cost_usd": 0.093066,
+     "mean_cost_per_call_usd": 0.005817,
+     "p95_latency_seconds": 3.067
+    }
+   },
+   "models": [
+    "claude-sonnet-5-5"
+   ],
+   "problems": {
+    "ho-n2-by-and-between": [
+     "contract_value: expected found/None, got unknown/unparseable",
+     "notice_period_days: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "ho-a1-ambiguous-dotted-date": [
+     "effective_date: expected unknown/ambiguous, got unknown/unparseable"
+    ],
+    "h2-p3-defined-terms": [
+     "provider_name: expected found/None, got found/None (values differ)",
+     "provider_name: value not in the expected output",
+     "customer_name: expected found/None, got found/None (values differ)",
+     "customer_name: value not in the expected output"
+    ],
+    "h2-l2-value-on-next-line": [
+     "notice_period_days: expected unknown/unparseable, got unknown/not_found"
+    ],
+    "h2-c1-provider-label-vs-prose": [
+     "outcome completed, expected needs_review",
+     "provider_name: expected conflict/None, got found/None"
+    ]
+   },
+   "hard_failures": []
+  }
+ ],
+ "decision": {
+  "runs_measured": 3,
+  "rules_1": {
+   "field_accuracy": 0.6339,
+   "evidence_completeness": 0.3538,
+   "abstention_recall": 1.0,
+   "conflict_recall": 0.5,
+   "wrong_values": 0,
+   "silent_conflicts": 1
+  },
+  "worst": {
+   "field_accuracy": 0.9643,
+   "evidence_completeness": 0.9385,
+   "abstention_recall": 1.0,
+   "conflict_recall": 0.5,
+   "wrong_values": 2,
+   "silent_conflicts": 1,
+   "p95_latency_seconds": 3.583,
+   "mean_cost_per_call_usd": 0.00582
+  },
+  "checks": {
+   "field_accuracy_gain_over_rules": true,
+   "evidence_completeness_gain_over_rules": true,
+   "abstention_recall_not_below_rules": true,
+   "conflict_recall_not_below_rules": true,
+   "wrong_values_not_above_rules": false,
+   "silent_conflicts_not_above_rules": true,
+   "budget_p95_latency": true,
+   "budget_mean_cost": true,
+   "hard_gates_every_run": true
+  },
+  "enable_assistance": false
+ }
+}

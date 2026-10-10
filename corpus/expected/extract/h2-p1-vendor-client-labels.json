@@ -1,0 +1,123 @@
+{
+  "case": "h2-p1-vendor-client-labels",
+  "split": "heldout-2",
+  "outcome": "completed",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Quillfeather Software Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Quillfeather Software Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Saltmarsh Veterinary Group",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Saltmarsh Veterinary Group",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2026-06-15",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "15 June 2026",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2029-06-14",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "14 June 2029",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "governing_law": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Ireland",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Ireland",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "contract_value": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": {
+            "amount": "48000.00",
+            "currency": "EUR"
+          },
+          "evidence": [
+            {
+              "page": 1,
+              "text": "EUR 48,000.00",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "notice_period_days": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": 60,
+          "evidence": [
+            {
+              "page": 1,
+              "text": "60 days",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

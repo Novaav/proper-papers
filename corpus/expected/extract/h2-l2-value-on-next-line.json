@@ -1,0 +1,87 @@
+{
+  "case": "h2-l2-value-on-next-line",
+  "split": "heldout-2",
+  "outcome": "completed",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Cobalt Ridge Partners LLP",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Cobalt Ridge Partners LLP",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Wrenfield Primary School",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Wrenfield Primary School",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2027-01-10",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "10 January 2027",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "unparseable",
+      "candidates": [
+        {
+          "value": null,
+          "evidence": [
+            {
+              "page": 1,
+              "text": "one month",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

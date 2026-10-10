@@ -1,0 +1,55 @@
+[project]
+name = "api"
+version = "0.1.0"
+description = "HTTP API for the document intelligence product."
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "alembic>=1.20.0,<1.21",
+    "anthropic>=1.11.0,<1.12",
+    "fastapi>=0.141.1",
+    "psycopg[binary]>=3.3.6,<3.4",
+    "pyjwt[crypto]>=2.15.0,<2.16",
+    "sqlalchemy>=2.1.1,<2.2",
+    "uvicorn>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "mypy>=2.3.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.4,<0.11"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.mypy]
+strict = true
+python_version = "3.14"
+files = ["src", "tests", "migrations", "scripts"]
+# The DI-1 corpus generator (standard library only) is type-checked through the tests.
+mypy_path = "../../corpus"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--strict-markers", "--strict-config"]
+xfail_strict = true
+# Fail on any warning. The single exception is Starlette's TestClient preferring
+# `httpx2` over `httpx`: adopting httpx2 is a pending dependency decision.
+filterwarnings = [
+    "error",
+    "ignore:Using `httpx` with `starlette.testclient` is deprecated:starlette.exceptions.StarletteDeprecationWarning",
+]
+
+[tool.alembic]
+script_location = "%(here)s/migrations"

@@ -1,0 +1,14 @@
+{
+ "request_sha256": "2089bd8664e79698e8bd7c2c6eaf0f2f3aeec63c56d3f2e449d943eb090d04d0",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Supplier: Ironbridge Environmental\\nConsulting Ltd\",\"raw\":\"Ironbridge Environmental\\nConsulting Ltd\"}],\"customer_name\":[],\"effective_date\":[],\"end_date\":[],\"governing_law\":[],\"contract_value\":[],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2068,
+  "output_tokens": 124,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 1.871,
+  "error": null
+ }
+}

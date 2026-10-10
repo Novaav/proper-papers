@@ -1,0 +1,7 @@
+{
+  "case": "dev-m3-image-only",
+  "split": "dev",
+  "outcome": "failed",
+  "failure_code": "no_text_layer",
+  "fields": null
+}

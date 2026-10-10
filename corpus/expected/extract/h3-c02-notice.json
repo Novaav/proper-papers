@@ -1,0 +1,86 @@
+{
+  "case": "h3-c02-notice",
+  "split": "heldout-3",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Abberley Health B.V.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Abberley Health B.V.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Thornbury Health S.A.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Thornbury Health S.A.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "conflict",
+      "reason": null,
+      "candidates": [
+        {
+          "value": 30,
+          "evidence": [
+            {
+              "page": 1,
+              "text": "30 days",
+              "occurrence": 1
+            }
+          ]
+        },
+        {
+          "value": 14,
+          "evidence": [
+            {
+              "page": 1,
+              "text": "14 days",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

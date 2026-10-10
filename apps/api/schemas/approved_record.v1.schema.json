@@ -1,0 +1,354 @@
+{
+  "$defs": {
+    "Approval": {
+      "additionalProperties": false,
+      "properties": {
+        "approved_at": {
+          "format": "date-time",
+          "title": "Approved At",
+          "type": "string"
+        },
+        "approved_by": {
+          "format": "uuid",
+          "title": "Approved By",
+          "type": "string"
+        },
+        "decisions_through": {
+          "minimum": 0,
+          "title": "Decisions Through",
+          "type": "integer"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "version",
+        "approved_by",
+        "approved_at",
+        "decisions_through"
+      ],
+      "title": "Approval",
+      "type": "object"
+    },
+    "ApprovedDocument": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "version_id": {
+          "format": "uuid",
+          "title": "Version Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "version_id",
+        "sha256",
+        "name"
+      ],
+      "title": "ApprovedDocument",
+      "type": "object"
+    },
+    "ApprovedField": {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "enum": [
+            "reviewer_decision",
+            "approved_as_extracted"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "decision": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DecisionRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "extracted": {
+          "$ref": "#/$defs/ExtractedState"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_found",
+                "unparseable",
+                "ambiguous",
+                "rejected_by_reviewer"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reason"
+        },
+        "status": {
+          "enum": [
+            "found",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Money"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "status",
+        "value",
+        "reason",
+        "basis",
+        "decision",
+        "extracted",
+        "evidence"
+      ],
+      "title": "ApprovedField",
+      "type": "object"
+    },
+    "ApprovedProcessing": {
+      "additionalProperties": false,
+      "properties": {
+        "extractor": {
+          "title": "Extractor",
+          "type": "string"
+        },
+        "finished_at": {
+          "format": "date-time",
+          "title": "Finished At",
+          "type": "string"
+        },
+        "pipeline_version": {
+          "title": "Pipeline Version",
+          "type": "string"
+        },
+        "run_id": {
+          "format": "uuid",
+          "title": "Run Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "run_id",
+        "pipeline_version",
+        "extractor",
+        "finished_at"
+      ],
+      "title": "ApprovedProcessing",
+      "type": "object"
+    },
+    "DecisionRef": {
+      "additionalProperties": false,
+      "properties": {
+        "decided_at": {
+          "format": "date-time",
+          "title": "Decided At",
+          "type": "string"
+        },
+        "decided_by": {
+          "format": "uuid",
+          "title": "Decided By",
+          "type": "string"
+        },
+        "seq": {
+          "minimum": 1,
+          "title": "Seq",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "seq",
+        "decided_by",
+        "decided_at"
+      ],
+      "title": "DecisionRef",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "end": {
+          "minimum": 1,
+          "title": "End",
+          "type": "integer"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "page",
+        "start",
+        "end",
+        "quote"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "ExtractedState": {
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_found",
+                "unparseable",
+                "ambiguous"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reason"
+        },
+        "status": {
+          "enum": [
+            "found",
+            "unknown",
+            "conflict"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "reason"
+      ],
+      "title": "ExtractedState",
+      "type": "object"
+    },
+    "Money": {
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "pattern": "^(0|[1-9]\\d{0,14})\\.\\d{2}$",
+          "title": "Amount",
+          "type": "string"
+        },
+        "currency": {
+          "pattern": "^[A-Z]{3}$",
+          "title": "Currency",
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "currency"
+      ],
+      "title": "Money",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "The approved record of one document version, with each value's provenance.",
+  "properties": {
+    "approval": {
+      "$ref": "#/$defs/Approval"
+    },
+    "document": {
+      "$ref": "#/$defs/ApprovedDocument"
+    },
+    "fields": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ApprovedField"
+      },
+      "propertyNames": {
+        "enum": [
+          "provider_name",
+          "customer_name",
+          "effective_date",
+          "end_date",
+          "governing_law",
+          "contract_value",
+          "notice_period_days"
+        ]
+      },
+      "title": "Fields",
+      "type": "object"
+    },
+    "processing": {
+      "$ref": "#/$defs/ApprovedProcessing"
+    },
+    "record_schema": {
+      "const": "service_agreement.v1",
+      "title": "Record Schema",
+      "type": "string"
+    },
+    "schema": {
+      "const": "approved_record.v1",
+      "title": "Schema",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "record_schema",
+    "document",
+    "processing",
+    "approval",
+    "fields"
+  ],
+  "title": "ApprovedRecordV1",
+  "type": "object"
+}

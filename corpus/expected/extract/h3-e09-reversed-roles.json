@@ -1,0 +1,79 @@
+{
+  "case": "h3-e09-reversed-roles",
+  "split": "heldout-3",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Bellingham Media LLC",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Bellingham Media LLC",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Kelmscott Engineering Inc.",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Kelmscott Engineering Inc.",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": {
+            "amount": "609200.00",
+            "currency": "SEK"
+          },
+          "evidence": [
+            {
+              "page": 1,
+              "text": "SEK 609,200.00",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

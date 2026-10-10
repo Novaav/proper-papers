@@ -1,0 +1,7 @@
+{
+  "case": "dev-f1-truncated",
+  "split": "dev",
+  "outcome": "failed",
+  "failure_code": "parse_failed",
+  "fields": null
+}

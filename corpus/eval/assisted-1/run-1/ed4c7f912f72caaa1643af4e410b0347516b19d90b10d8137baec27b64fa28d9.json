@@ -1,0 +1,14 @@
+{
+ "request_sha256": "ed4c7f912f72caaa1643af4e410b0347516b19d90b10d8137baec27b64fa28d9",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Supplier: Blackthorn Security Ltd\",\"raw\":\"Blackthorn Security Ltd\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Client: Rowan Court Residents Association\",\"raw\":\"Rowan Court Residents Association\"}],\"effective_date\":[{\"page\":1,\"quote\":\"Start date: 1 December 2026\",\"raw\":\"1 December 2026\"}],\"end_date\":[],\"governing_law\":[],\"contract_value\":[],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2115,
+  "output_tokens": 186,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.515,
+  "error": null
+ }
+}

@@ -1,0 +1,32 @@
+{
+  "features": {
+    "javascript": false,
+    "xfa": false
+  },
+  "ok": true,
+  "page_count": 2,
+  "pages": [
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 1,
+      "off_page_chars": 0,
+      "text": "ORDER FORM\n\nProvider .................... Tidewater Systems Ltd\nCustomer .................... Greyfield Logistics Ltd",
+      "undefined_chars": 0
+    },
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 2,
+      "off_page_chars": 0,
+      "text": "KEY DATES AND FEES\n\nEffective date .............. 2 January 2027\nContract value .............. EUR 64,000.00",
+      "undefined_chars": 0
+    }
+  ],
+  "schema": "docparser.output.v1",
+  "versions": {
+    "docparser": "0.1.0",
+    "normalizer": "1",
+    "pdfminer.six": "20260107"
+  }
+}

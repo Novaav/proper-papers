@@ -1,0 +1,162 @@
+/* --- Loading states: a page being highlighted, and a thin indeterminate track --- */
+/* Only opacity and transform animate: no layout, no blur, no filters, no gradients. */
+
+.loading-track {
+  position: relative;
+  display: block;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--rule);
+}
+
+.loading-track-run {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 34%;
+  border-radius: 999px;
+  background: var(--ink);
+  opacity: 0.5;
+  animation: track-run 1.9s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+}
+
+/* Waiting in the queue: the track is at rest, a short faint segment at its start. */
+.loading-track[data-state="queued"] .loading-track-run {
+  width: 18%;
+  opacity: 0.22;
+  animation: none;
+}
+
+@keyframes track-run {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+
+/* An upload in flight: the same page, and the same track beside it. */
+.upload-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.upload-progress .loading-track {
+  flex: 1;
+}
+
+.upload-progress .doc-scan {
+  margin: 0;
+}
+
+/* Processing: the track sits under the real status text. */
+.pipeline-facts dd > .loading-track {
+  margin-top: 0.3rem;
+}
+
+/* The miniature page. */
+.doc-scan {
+  flex: none;
+  width: 1.15rem;
+  height: 1.45rem;
+  margin-left: 0.55rem;
+  vertical-align: -0.3rem;
+  overflow: visible;
+}
+
+.doc-scan-page {
+  fill: var(--surface);
+  stroke: var(--border-strong);
+  stroke-width: 1.4;
+}
+
+.doc-scan-line {
+  stroke: var(--rule-strong);
+}
+
+.doc-scan-hl {
+  fill: var(--hl);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: left center;
+}
+
+/* Waiting: the page is dashed and still; one line is faintly marked and
+   breathes very slowly. */
+.doc-scan[data-state="queued"] .doc-scan-page {
+  stroke-dasharray: 3 2.4;
+}
+
+.doc-scan[data-state="queued"] .doc-scan-hl--1 {
+  opacity: 0.32;
+  transform: scaleX(0.6);
+  animation: hl-breathe 4.2s ease-in-out infinite;
+}
+
+/* Being read: a soft highlight wipes across each line in turn, then fades, and
+   the pass repeats. */
+.doc-scan[data-state="running"] .doc-scan-hl {
+  animation: hl-wipe 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.doc-scan[data-state="running"] .doc-scan-hl--2 {
+  animation-delay: 0.45s;
+}
+
+.doc-scan[data-state="running"] .doc-scan-hl--3 {
+  animation-delay: 0.9s;
+}
+
+.doc-scan[data-state="running"] .doc-scan-hl--4 {
+  animation-delay: 1.35s;
+}
+
+@keyframes hl-wipe {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  8% {
+    opacity: 0.95;
+  }
+  30% {
+    opacity: 0.95;
+    transform: scaleX(1);
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hl-breathe {
+  0%,
+  100% {
+    opacity: 0.22;
+  }
+  50% {
+    opacity: 0.42;
+  }
+}
+
+/* Reduced motion: nothing moves. A being-read page keeps one lit line (and a
+   solid outline), so it still differs from a waiting one. */
+@media (prefers-reduced-motion: reduce) {
+  .loading-track-run {
+    width: 100%;
+    opacity: 0.3;
+  }
+
+  .loading-track[data-state="queued"] .loading-track-run {
+    width: 18%;
+    opacity: 0.22;
+  }
+
+  .doc-scan[data-state="running"] .doc-scan-hl--2 {
+    opacity: 0.95;
+    transform: none;
+  }
+}

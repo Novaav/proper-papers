@@ -1,0 +1,139 @@
+{
+  "dataset": "di1-service-agreements",
+  "split": "heldout-2",
+  "purpose": "AI1: compare the rules baseline (rules-1) with model-assisted extraction (architecture B') on documents written before any model-assisted extractor or prompt exists.",
+  "cases": [
+    "h2-a1-ambiguous-commencement",
+    "h2-c1-provider-label-vs-prose",
+    "h2-c2-notice-label-vs-clause",
+    "h2-d1-same-date-two-ways",
+    "h2-l1-table",
+    "h2-l2-value-on-next-line",
+    "h2-l3-name-wraps-lines",
+    "h2-m1-provider-not-named",
+    "h2-m2-references-only",
+    "h2-m3-heading-is-not-a-name",
+    "h2-p1-vendor-client-labels",
+    "h2-p2-narrative",
+    "h2-p3-defined-terms",
+    "h2-p4-us-style",
+    "h2-x1-instruction-to-override",
+    "h2-x2-formula-not-a-value"
+  ],
+  "case_count": 16,
+  "field_count": 112,
+  "expected_field_statuses": {
+    "found": 58,
+    "conflict": 2,
+    "unknown": 52
+  },
+  "coverage": {
+    "adversarial": [
+      "h2-x1-instruction-to-override",
+      "h2-x2-formula-not-a-value"
+    ],
+    "ambiguous": [
+      "h2-a1-ambiguous-commencement"
+    ],
+    "conflict": [
+      "h2-c1-provider-label-vs-prose",
+      "h2-c2-notice-label-vs-clause"
+    ],
+    "duplicate": [
+      "h2-d1-same-date-two-ways"
+    ],
+    "layout": [
+      "h2-l1-table",
+      "h2-l2-value-on-next-line",
+      "h2-l3-name-wraps-lines"
+    ],
+    "missing": [
+      "h2-m1-provider-not-named",
+      "h2-m2-references-only",
+      "h2-m3-heading-is-not-a-name"
+    ],
+    "phrasing": [
+      "h2-p1-vendor-client-labels",
+      "h2-p2-narrative",
+      "h2-p3-defined-terms",
+      "h2-p4-us-style"
+    ]
+  },
+  "pdf_sha256": {
+    "h2-a1-ambiguous-commencement": "8e13410eaa0c7d3efd45a04a2303e444c60b4d1a19fa8d4eacfcacdb1c18fde1",
+    "h2-c1-provider-label-vs-prose": "440056912ab2d310c1fd3c3a26ebad819244298052a88b5d00b72299b47dab6e",
+    "h2-c2-notice-label-vs-clause": "3acf73e94f00baca2b0bd5c9aceb5b985f4001802e1810d0404dfeb72c8b69bd",
+    "h2-d1-same-date-two-ways": "b9d6787a11c0856b6643d07f202720fb9ac55da459c6b2556c72ca95c9c58c65",
+    "h2-l1-table": "b3840168ab28da39f3df0203e9ae9aac7ac2aa530cbc1c861f0c1e6388a1acfb",
+    "h2-l2-value-on-next-line": "b6622f741c065a32ee13cd123ea6950784c0cdc635a9f06ae744a8c6c1645f85",
+    "h2-l3-name-wraps-lines": "9d6f97274f9f4833c87ff1fd48f641f7922dd8440a675b546753d67048636172",
+    "h2-m1-provider-not-named": "98b3b7a63aced319376b2f206c694a9b90f9298578f7b8966075aa7119f7da61",
+    "h2-m2-references-only": "7c7e9f4025c8ca323748e96bf1fbe45f77b34863f28c1d653921a298da19ca9d",
+    "h2-m3-heading-is-not-a-name": "d5f5543ff9c8347f2f2254c5fbf9a5276de39ddace4989731f76b9834aad38c4",
+    "h2-p1-vendor-client-labels": "b0afc1f76277ebeb35d08f749c9b370b898cedc429e79539421a88e61bbde445",
+    "h2-p2-narrative": "8b71d7de84b7e4ac7e47bb6bd61b11e36ea05cda084f7698f6854a1f605bb53c",
+    "h2-p3-defined-terms": "a94d29b5f9a0bf58aa73e4a31a04e0cd03daa59de87d8926775b5362783b8dc5",
+    "h2-p4-us-style": "537028d46a7e6280cd6e1a5a6950d96129ccb3a8678d3090db0b7705b94ae60d",
+    "h2-x1-instruction-to-override": "5974fa86f8e07c48afcb19e85c6103e68190ddc24b9b9473725b71dedc581080",
+    "h2-x2-formula-not-a-value": "584b4436793e37c1c00d260abef45e260a62765b589d30264c13beb05012a207"
+  },
+  "expected_extract_sha256": {
+    "h2-a1-ambiguous-commencement": "ae0cce05b99cc15cf28382758d0786a25c335f27d0df23358110755983d26da2",
+    "h2-c1-provider-label-vs-prose": "140087f32d12ec56fe45c45657bb8fb56b19bcb692346ea7f94907c035852b5a",
+    "h2-c2-notice-label-vs-clause": "03e0c41971145744ff5f4000c1b7e440c2a20a3b6e1367e14f7eafbe253a64e1",
+    "h2-d1-same-date-two-ways": "fa05625cd2d506ed2b8b50c66e8483fef623064374b05e573767ad5b9018fa3b",
+    "h2-l1-table": "3f802dd8c04af5a688ec70f77c0b92cdc3ea605743f90a6afdc2f95c8bd3dad3",
+    "h2-l2-value-on-next-line": "0e347c270df244ff6701416bd2d1ebb407b60bc8c8244ee3f6737ad43de1d6ed",
+    "h2-l3-name-wraps-lines": "20534c5f3b0dcdeb3aea41702fdf0506efd12f6f6b878c201fee08c69aac2d0c",
+    "h2-m1-provider-not-named": "4b2099f580113b34d2feb9eda7551ca58d94c94e8af5dbbf2f2f283eb772be9c",
+    "h2-m2-references-only": "4f4ea703315d1df916dc950975af37ea71c736c608afb241b9fc670d2df85cd3",
+    "h2-m3-heading-is-not-a-name": "591c2948b57738a2fd643ffda95c7dd0d8e8f2b38f640070ed306a1e6017f92f",
+    "h2-p1-vendor-client-labels": "540658ac07ebf1dd2708700a14ae1218e1c4427ef0c273ac475b5100051bd4ff",
+    "h2-p2-narrative": "e0878f80958a2f541a5d71729ad635acdda982a9c4ffb048fec63d15993199de",
+    "h2-p3-defined-terms": "e66a672bfdee0f4bb47d0744aaa1169132d8940ea669abcaac5dd159bee46d9c",
+    "h2-p4-us-style": "d14ba02c237b66a0294a3eb7abf6af207090f3abf0b0691449385d4a2addab39",
+    "h2-x1-instruction-to-override": "a80f6ba1d2e1f0c5dbf3e6906ecd17378f98806e4d94139513c9acad0aba7c5c",
+    "h2-x2-formula-not-a-value": "efb01963ed0826f16d108c0f617c658625d0de9711b99e38e3d1ad5b3904d7cc"
+  },
+  "expected_extract_digest": "277fd365a06a0ae79196204098a502297e10d2824dccab6dd44723db5b30f2e8",
+  "protocol": {
+    "tuning": "Never used to write or tune a prompt, a model configuration, a normaliser or a rule; prompt work uses the dev split only.",
+    "freeze": "The prompt, model ID and configuration are frozen and their hashes recorded in a committed file before the first live heldout-2 run.",
+    "runs": 3,
+    "measured_once": "The frozen configuration is measured once (three runs); a later change needs a new, fresh held-out split before it can be measured on held-out data again.",
+    "rules_baseline": "rules-1 is measured on heldout-2 in the same PR that registers it (corpus/eval/heldout-2-baseline.json), before any model exists.",
+    "outcome_accuracy": "Reported, not a success criterion: model-sourced fields are blocking by design, so assisted outcomes differ from the contract's completed/needs_review labels."
+  },
+  "thresholds": {
+    "hard_every_run_all_splits": {
+      "schema_valid_rate": 1.0,
+      "citation_resolution": 1.0,
+      "unsupported_claims": 0,
+      "failure_code_accuracy": 1.0
+    },
+    "hard_every_run_dev": {
+      "accuracy_metrics": 1.0,
+      "silent_conflicts": 0,
+      "wrong_values": 0
+    },
+    "hard_every_run_heldout": "no regression against corpus/eval/heldout-baseline.json",
+    "primary_heldout_2_min_over_runs": {
+      "field_accuracy_gain_over_rules": 0.15,
+      "evidence_completeness_gain_over_rules": 0.15,
+      "abstention_recall_not_below_rules": true,
+      "conflict_recall_not_below_rules": true,
+      "wrong_values_not_above_rules": true,
+      "silent_conflicts_not_above_rules": true
+    },
+    "budget_per_document": {
+      "p95_latency_seconds": 20,
+      "mean_cost_usd": 0.05
+    }
+  },
+  "decision_rule": "Model assistance may be enabled only if every hard gate holds on every run, every primary heldout-2 threshold holds on the worst of the three runs, and the budget holds. Otherwise the result is reported as measured (including a negative result) and nothing is tuned on heldout-2.",
+  "limitations": [
+    "16 cases (112 fields): results are directional; every metric is reported with its counts, never as a percentage alone.",
+    "The same author wrote the cases and will write the prompt; the cases were written systematically from the contract in predeclared categories, and the expected outputs are frozen here before any prompt exists.",
+    "Architecture B' never consults the model for a field the rules found, so a conflict between a rule value and an unlabelled mention (h2-c1) stays silent for both extractors; it is measured, not hidden."
+  ]
+}

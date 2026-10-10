@@ -1,0 +1,101 @@
+{
+  "case": "h2-l1-table",
+  "split": "heldout-2",
+  "outcome": "completed",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Hollowbrook Media Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Hollowbrook Media Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Tamsin Cole Architects",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Tamsin Cole Architects",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2027-02-02",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "2 February 2027",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2028-02-01",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "1 February 2028",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": {
+            "amount": "12600.00",
+            "currency": "EUR"
+          },
+          "evidence": [
+            {
+              "page": 1,
+              "text": "EUR 12,600.00",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "case": "dev-c1-conflict-date",
+  "split": "dev",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Northwind Analytics Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Northwind Analytics Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Harbour Freight Services Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Harbour Freight Services Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "conflict",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "2026-03-01",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "1 March 2026",
+              "occurrence": 1
+            }
+          ]
+        },
+        {
+          "value": "2026-04-01",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "1 April 2026",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

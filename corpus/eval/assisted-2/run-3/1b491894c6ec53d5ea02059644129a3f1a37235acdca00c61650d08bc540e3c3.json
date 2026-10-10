@@ -1,0 +1,14 @@
+{
+ "request_sha256": "1b491894c6ec53d5ea02059644129a3f1a37235acdca00c61650d08bc540e3c3",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Supplier: Brightwater Consulting LLP\",\"raw\":\"Brightwater Consulting LLP\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Client: Juniper Housing Association\",\"raw\":\"Juniper Housing Association\"}],\"effective_date\":[{\"page\":1,\"quote\":\"Commencement Date: 7 September 2026\",\"raw\":\"7 September 2026\"}],\"end_date\":[{\"page\":1,\"quote\":\"Expiry Date: 6 September 2027\",\"raw\":\"6 September 2027\"}],\"governing_law\":[],\"contract_value\":[{\"page\":1,\"quote\":\"Total Fees: GBP 22,400.00\",\"raw\":\"GBP 22,400.00\"}],\"notice_period_days\":[{\"page\":1,\"quote\":\"Termination Notice: 14 days\",\"raw\":\"14 days\"}]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2291,
+  "output_tokens": 297,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.583,
+  "error": null
+ }
+}

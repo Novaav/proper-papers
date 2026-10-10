@@ -1,0 +1,24 @@
+{
+  "features": {
+    "javascript": false,
+    "xfa": false
+  },
+  "ok": true,
+  "page_count": 1,
+  "pages": [
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 1,
+      "off_page_chars": 0,
+      "text": "SERVICE ORDER\n\nThe Supplier shall deliver the services in the attached statement of work.\nThe Client shall pay the agreed fees.\nEffective Date: 27 May 2027\n\nSigned for the Supplier: Wyndham Logistics Inc.\nSigned for the Client: Juniperhill Consulting LLC",
+      "undefined_chars": 0
+    }
+  ],
+  "schema": "docparser.output.v1",
+  "versions": {
+    "docparser": "0.1.0",
+    "normalizer": "1",
+    "pdfminer.six": "20260107"
+  }
+}

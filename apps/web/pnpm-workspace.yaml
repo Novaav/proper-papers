@@ -1,0 +1,8 @@
+# Dependency build scripts are denied unless explicitly reviewed and allowed.
+allowBuilds:
+  # Postinstall only downloads a native binding when the optional platform
+  # package is missing; pnpm installs that package directly.
+  unrs-resolver: false
+
+# Fail installs on a Node version outside package.json "engines".
+engineStrict: true

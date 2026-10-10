@@ -1,0 +1,392 @@
+/* --- Base: reset, type, links, controls, forms, tags -------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: var(--font);
+  font-size: 100%;
+  line-height: 1.5;
+  font-optical-sizing: auto;
+  font-feature-settings:
+    "calt" 1,
+    "kern" 1;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body:has(main.landing) {
+  background: var(--canvas);
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 620;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: max(0.85em, 0.75rem);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.hint,
+.meta {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.error {
+  color: var(--failed);
+  font-weight: 600;
+}
+
+/* The mono label: the product's one typographic signature. */
+.eyebrow,
+.rail-label,
+.index {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Controls: a hairline, a short shadow, a clear focus ring. Their text names
+   them; the hairline only frames them. */
+button,
+.button-secondary,
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--btn-border);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  box-shadow: var(--shadow-ctl);
+  color: var(--text);
+  font: inherit;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    transform 120ms ease;
+}
+
+button:hover,
+.button-secondary:hover,
+.button-primary:hover {
+  border-color: var(--border-strong);
+  background: var(--hover);
+  text-decoration: none;
+}
+
+button:active,
+.button-secondary:active,
+.button-primary:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.button-primary {
+  border-color: var(--ink);
+  background: var(--ink);
+  box-shadow: var(--highlight);
+  color: var(--on-ink);
+}
+
+.button-primary:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  opacity: 0.88;
+}
+
+summary.button-primary {
+  list-style: none;
+}
+
+summary.button-primary::-webkit-details-marker {
+  display: none;
+}
+
+svg {
+  flex: none;
+}
+
+button svg,
+.button-primary svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+/* Fields */
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 560;
+}
+
+input[type="text"] {
+  width: 100%;
+  min-height: 2.25rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-control);
+  background: var(--canvas);
+  color: var(--text);
+  font: inherit;
+  transition: border-color 120ms ease;
+}
+
+input[type="text"]:hover {
+  border-color: var(--text);
+}
+
+input[type="text"][aria-invalid="true"] {
+  border-color: var(--failed);
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px dashed var(--rule-strong);
+  border-radius: var(--radius);
+  background: var(--subtle);
+  color: var(--muted);
+  font: inherit;
+}
+
+input[type="file"]:hover {
+  border-color: var(--border-strong);
+}
+
+input[type="file"]::file-selector-button {
+  min-height: 2rem;
+  margin-right: 0.75rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--btn-border);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-ctl);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  border-color: var(--border-strong);
+  background: var(--hover);
+}
+
+/* A state is a word on a soft tint; the word carries the meaning. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: var(--neutral-bg);
+  color: var(--neutral);
+  font-size: 0.75rem;
+  font-weight: 560;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.badge::before {
+  content: "";
+  flex: none;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.75;
+}
+
+.badge--success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.badge--attention {
+  background: var(--attention-bg);
+  color: var(--attention);
+}
+
+.badge--failed {
+  background: var(--failed-bg);
+  color: var(--failed);
+}
+
+/* Messages that sit directly in a page: a fixed sentence, role and tint. */
+[role="status"].page-notice:not(:empty),
+.page-body > p[role="status"],
+.page-body > p[role="alert"],
+.page-notice[role="alert"]:not(:empty) {
+  margin: 1rem 0;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-control);
+  background: var(--subtle);
+}
+
+.page-body > p[role="status"],
+[role="status"].page-notice:not(:empty) {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.page-body > p[role="alert"],
+.page-notice[role="alert"]:not(:empty) {
+  background: var(--failed-bg);
+  color: var(--failed);
+}
+
+.page-notice:empty {
+  margin: 0;
+}
+
+/* A message about what was just done stays in view while the page scrolls to
+   the field it concerns (the address points at a panel further down). */
+[role="status"].page-notice:not(:empty),
+[role="alert"].page-notice:not(:empty) {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 9;
+  box-shadow: var(--shadow-pop);
+}
+
+/* Error and not-found pages: one framed card, centred. */
+main.message {
+  width: calc(100% - 3rem);
+  max-width: 28rem;
+  margin: 14vh auto 0;
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-window);
+  background: var(--surface);
+  box-shadow: var(--shadow-window);
+}
+
+.app-content > main.message {
+  margin-top: 10vh;
+}
+
+main.message h1 {
+  margin-bottom: 0.75rem;
+  font-size: 1.375rem;
+}
+
+main.message p + p {
+  margin-top: 0.6rem;
+}
+
+.card {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 40;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--accent);
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

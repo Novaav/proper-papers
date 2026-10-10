@@ -1,0 +1,40 @@
+{
+  "features": {
+    "javascript": false,
+    "xfa": false
+  },
+  "ok": true,
+  "page_count": 3,
+  "pages": [
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 1,
+      "off_page_chars": 0,
+      "text": "MASTER SERVICES AGREEMENT\n\nProvider: Larkspur Cloud Services Ltd\nCustomer: Meridian Health Trust",
+      "undefined_chars": 0
+    },
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 2,
+      "off_page_chars": 0,
+      "text": "SCHEDULE 1 - TERM\n\nEffective Date: 2 January 2026\nEnd Date: 31 December 2026",
+      "undefined_chars": 0
+    },
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 3,
+      "off_page_chars": 0,
+      "text": "SCHEDULE 2 - COMMERCIAL TERMS\n\nContract Value: GBP 75,000.00\nNotice Period: 30 days\nGoverning Law: Scotland",
+      "undefined_chars": 0
+    }
+  ],
+  "schema": "docparser.output.v1",
+  "versions": {
+    "docparser": "0.1.0",
+    "normalizer": "1",
+    "pdfminer.six": "20260107"
+  }
+}

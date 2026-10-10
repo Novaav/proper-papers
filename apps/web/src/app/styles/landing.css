@@ -1,0 +1,464 @@
+/* --- Landing --------------------------------------------------------------------- */
+
+main.landing {
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.hero {
+  position: relative;
+  padding: 5.5rem 0 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: 32rem;
+  background-image: radial-gradient(var(--rule-strong) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero-copy {
+  display: grid;
+  justify-items: center;
+  max-width: none;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: var(--canvas);
+  color: var(--muted);
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 1rem + 6.2vw, 4.75rem);
+  font-weight: 620;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+  max-width: 17ch;
+}
+
+.hero .lead {
+  max-width: 38rem;
+}
+
+.hero-actions {
+  justify-content: center;
+}
+
+/* The one place the highlighter shows up outside the product: a marker line
+   under the key phrase, drawn in once. */
+.hero h1 .soft {
+  color: var(--muted);
+  background: linear-gradient(var(--hl), var(--hl)) 0 90% / 100% 0.38em
+    no-repeat;
+  animation: mark-in 450ms var(--ease) 600ms backwards;
+}
+
+.lead {
+  max-width: 36rem;
+  margin: 1.5rem auto 2rem;
+  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-actions a {
+  min-height: 2.5rem;
+  padding: 0 1.15rem;
+}
+
+.hero-actions a:not(.button-primary) {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--btn-border);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  box-shadow: var(--shadow-ctl);
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 120ms ease;
+}
+
+.hero-actions a:not(.button-primary):hover {
+  background: var(--hover);
+}
+
+/* The product window: the review workbench, as it looks. */
+.example {
+  container: example / inline-size;
+  margin: 4rem 0 0;
+  text-align: left;
+  overflow: clip;
+  border-radius: var(--radius-window);
+  background: var(--canvas);
+  box-shadow: var(--shadow-window);
+}
+
+.example-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.9rem 1.4rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--subtle);
+}
+
+.example-file {
+  display: block;
+  font-weight: 600;
+}
+
+.example-note {
+  display: block;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.example-fields {
+  margin: 0;
+  padding: 0.75rem;
+  list-style: none;
+}
+
+.ex-row {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.8rem 1rem 0.85rem;
+  border-radius: 8px;
+}
+
+.ex-row--current {
+  background: var(--select-bg);
+}
+
+.ex-label {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.ex-row--current .ex-label {
+  color: var(--text);
+  font-weight: 560;
+}
+
+.ex-value {
+  font-size: 1rem;
+  font-weight: 540;
+}
+
+.ex-row--unknown .ex-value {
+  color: var(--muted);
+  font-weight: 450;
+}
+
+.example-pane {
+  padding: 1.1rem 1rem 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.example-title {
+  margin: 0.2rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.example .provenance {
+  margin-top: 0.8rem;
+}
+
+.example mark {
+  animation: mark-in 450ms var(--ease) 900ms backwards;
+  background: linear-gradient(var(--hl), var(--hl)) 0 0 / 100% 100% no-repeat;
+}
+
+@container example (min-width: 44rem) {
+  .example-body {
+    display: grid;
+    grid-template-columns: minmax(18rem, 2fr) minmax(0, 3fr);
+  }
+
+  .example .quote blockquote {
+    padding: 0.9rem 1.1rem;
+    font-size: 0.9375rem;
+  }
+
+  .example .candidate-value {
+    font-size: 1.0625rem;
+  }
+
+  .example-pane {
+    padding: 1.9rem 2.1rem 2.2rem;
+    border-top: 0;
+    border-left: 1px solid var(--rule);
+  }
+}
+
+@keyframes mark-in {
+  from {
+    background-size: 0% 100%;
+  }
+}
+
+/* Principles: statements, two-toned: the claim, then what it means. */
+.promises,
+.how {
+  margin-top: 6rem;
+}
+
+.promises h2,
+.how h2 {
+  margin: 0 0 2rem;
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem);
+  font-weight: 620;
+  letter-spacing: -0.03em;
+}
+
+.promises h2::before,
+.how h2::before {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.promises h2::before {
+  content: "Principles" / "";
+}
+
+.how h2::before {
+  content: "Workflow" / "";
+}
+
+.promises ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: cell;
+}
+
+.promises li {
+  padding: 1.5rem 0 2rem;
+  border-top: 1px solid var(--rule);
+  counter-increment: cell;
+}
+
+.promises li::before {
+  content: counter(cell, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.9rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+.promises h3,
+.promises p {
+  display: inline;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.promises h3 {
+  font-weight: 620;
+}
+
+.promises h3::after {
+  content: ". ";
+}
+
+.promises p {
+  color: var(--muted);
+  font-weight: 450;
+}
+
+/* Workflow: a track with four stops. */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: cell;
+}
+
+.steps > li {
+  position: relative;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule-strong);
+  counter-increment: cell;
+}
+
+.steps > li::before {
+  content: "";
+  position: absolute;
+  top: -0.3rem;
+  left: 0;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.steps h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.25rem;
+  font-weight: 620;
+}
+
+.steps h3::before {
+  content: counter(cell, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.steps p {
+  color: var(--muted);
+}
+
+.system-status {
+  margin-top: 6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.system-status h2 {
+  margin-bottom: 0.25rem;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Motion: one entrance for the hero and the window, one reveal per block. */
+.hero-copy > *,
+.hero > .example {
+  animation: rise 480ms var(--ease) both;
+}
+
+.hero-copy > :nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.hero-copy > :nth-child(3) {
+  animation-delay: 140ms;
+}
+
+.hero-copy > :nth-child(4) {
+  animation-delay: 210ms;
+}
+
+.example {
+  animation: rise 480ms var(--ease) 300ms both;
+}
+
+.reveal {
+  transition:
+    opacity 480ms var(--ease),
+    transform 480ms var(--ease);
+}
+
+.reveal--pending {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@media (max-width: 62rem) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  main.landing {
+    padding-inline: 1rem;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .example {
+    margin-top: 2.5rem;
+  }
+
+  .promises,
+  .how,
+  .system-status {
+    margin-top: 4rem;
+  }
+
+  .promises ul,
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .promises h3,
+  .promises p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal--pending {
+    opacity: 1;
+    transform: none;
+  }
+}

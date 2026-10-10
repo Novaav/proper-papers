@@ -1,0 +1,76 @@
+{
+  "case": "h3-e04-wrapped-name",
+  "split": "heldout-3",
+  "outcome": "needs_review",
+  "failure_code": null,
+  "fields": {
+    "provider_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Yarrowby Analytics Pty Ltd",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Yarrowby Analytics\nPty Ltd",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "customer_name": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Elmhurst Media plc",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Elmhurst Media plc",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "effective_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "end_date": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "governing_law": {
+      "status": "found",
+      "reason": null,
+      "candidates": [
+        {
+          "value": "Sweden",
+          "evidence": [
+            {
+              "page": 1,
+              "text": "Sweden",
+              "occurrence": 1
+            }
+          ]
+        }
+      ]
+    },
+    "contract_value": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    },
+    "notice_period_days": {
+      "status": "unknown",
+      "reason": "not_found",
+      "candidates": []
+    }
+  }
+}

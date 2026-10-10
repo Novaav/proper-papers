@@ -1,0 +1,14 @@
+{
+ "request_sha256": "372200302e2d766cca8be192f571ac001ddd85d7ccfa3146cd09e39eba4d4b09",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Provider\\nCobalt Ridge Partners LLP\",\"raw\":\"Cobalt Ridge Partners LLP\"}],\"customer_name\":[{\"page\":1,\"quote\":\"Customer\\nWrenfield Primary School\",\"raw\":\"Wrenfield Primary School\"}],\"effective_date\":[{\"page\":1,\"quote\":\"Effective date\\n10 January 2027\",\"raw\":\"10 January 2027\"}],\"end_date\":[],\"governing_law\":[],\"contract_value\":[],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2087,
+  "output_tokens": 191,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 1.93,
+  "error": null
+ }
+}

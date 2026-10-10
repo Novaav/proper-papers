@@ -1,0 +1,14 @@
+{
+ "request_sha256": "6efd7e6fa29ed8aab4a8518e229c17bda158ec6bf77aeb49e9d541743305ce87",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"The services are provided by Nantwell Optics Limited, trading as Ironbridge Direct,\",\"raw\":\"Nantwell Optics Limited\"}],\"customer_name\":[{\"page\":1,\"quote\":\"to Zennor Laboratories AB.\",\"raw\":\"Zennor Laboratories AB\"}],\"effective_date\":[],\"end_date\":[],\"governing_law\":[],\"contract_value\":[],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2237,
+  "output_tokens": 163,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.457,
+  "error": null
+ }
+}

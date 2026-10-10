@@ -1,0 +1,33 @@
+{
+  "dataset": "di1-service-agreements",
+  "dataset_version": "1",
+  "split": "heldout",
+  "cases": [
+    "ho-a1-ambiguous-dotted-date",
+    "ho-c1-conflict-law",
+    "ho-d1-same-value-two-formats",
+    "ho-m1-customer-missing",
+    "ho-n1-synonym-labels",
+    "ho-n2-by-and-between",
+    "ho-n3-dotted-leaders",
+    "ho-x1-injection"
+  ],
+  "extractor": "rules-1",
+  "metrics": {
+    "cases": 8,
+    "failure_cases": 0,
+    "outcome_accuracy": 0.625,
+    "failure_code_accuracy": null,
+    "schema_valid_rate": 1.0,
+    "citation_resolution": 1.0,
+    "unsupported_claims": 0,
+    "field_accuracy": 0.6964,
+    "evidence_completeness": 0.5143,
+    "silent_conflicts": 0,
+    "wrong_values": 0,
+    "abstention_precision": 0.625,
+    "abstention_recall": 1.0,
+    "conflict_precision": 1.0,
+    "conflict_recall": 1.0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "features": {
+    "javascript": false,
+    "xfa": false
+  },
+  "ok": true,
+  "page_count": 1,
+  "pages": [
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 1,
+      "off_page_chars": 0,
+      "text": "SERVICES AGREEMENT\n\nThis Services Agreement is made on 15 April 2026 between Northwind Analytics Ltd\n(the \"Provider\") and Kestrel Retail Group plc (the \"Customer\").\n\n1. Term. This Agreement commences on 1 May 2026 and ends on 30 April 2027.\n2. Fees. The total fees payable under this Agreement are €48,500.\n3. Termination. Either party may terminate this Agreement on 60 days' written notice.\n4. Law. This Agreement shall be governed by the laws of Ireland.",
+      "undefined_chars": 0
+    }
+  ],
+  "schema": "docparser.output.v1",
+  "versions": {
+    "docparser": "0.1.0",
+    "normalizer": "1",
+    "pdfminer.six": "20260107"
+  }
+}

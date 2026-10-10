@@ -1,0 +1,14 @@
+{
+ "request_sha256": "17e9f1d393a38517f5d7a0c91439adc6db1745a11f07d0fddb787607f35f5ca0",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[{\"page\":1,\"quote\":\"Larkspur will provide the services to Fenwick\",\"raw\":\"Larkspur\"}],\"customer_name\":[{\"page\":1,\"quote\":\"provide the services to Fenwick\",\"raw\":\"Fenwick\"}],\"effective_date\":[{\"page\":1,\"quote\":\"with effect from 1 April 2027\",\"raw\":\"1 April 2027\"}],\"end_date\":[],\"governing_law\":[],\"contract_value\":[],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2121,
+  "output_tokens": 168,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 2.104,
+  "error": null
+ }
+}

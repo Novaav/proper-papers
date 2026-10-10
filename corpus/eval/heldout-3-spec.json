@@ -1,0 +1,96 @@
+{
+  "dataset": "di1-service-agreements",
+  "purpose": "AI1 assisted-2: a fresh held-out split (heldout-3) and a development split (assist-dev), specified before any case, prompt, verifier or configuration of assisted-2 exists.",
+  "generator": "corpus/generated.py (standard library only, seeded)",
+  "seed": 20261002,
+  "ground_truth": "derived from the generation parameters under the frozen service_agreement.v1 contract; no extractor writes expected outputs",
+  "splits": {
+    "heldout-3": {
+      "id_prefix": "h3-",
+      "case_count": 24,
+      "categories": {
+        "entity": 10,
+        "phrasing": 3,
+        "layout": 2,
+        "missing": 3,
+        "conflict": 2,
+        "ambiguous": 1,
+        "adversarial": 2,
+        "duplicate": 1
+      },
+      "entity_cases": [
+        "full name only, unseen wording",
+        "defined short name after the full name",
+        "trading-as name",
+        "full name wrapped across lines",
+        "full and short mentions repeated",
+        "full name only in the signature block",
+        "no longer form anywhere",
+        "two entities sharing a prefix, one not a party",
+        "reversed role wording",
+        "planted definition in instruction-like text"
+      ]
+    },
+    "assist-dev": {
+      "id_prefix": "ad-",
+      "case_count": 10,
+      "categories": {
+        "entity": 6,
+        "phrasing": 1,
+        "layout": 1,
+        "missing": 1,
+        "adversarial": 1
+      },
+      "use": "development only; never part of a final measurement",
+      "gates_for_assisted_2_development": [
+        "integrity",
+        "wrong_values == 0",
+        "wrong_party_names == 0"
+      ]
+    }
+  },
+  "templates": "disjoint between assist-dev and heldout-3",
+  "protocol": {
+    "freeze": "heldout-3 cases, expected outputs and hashes are frozen in heldout-3-preregistration.json before assisted-2 exists; never read for development afterwards",
+    "rules_baseline": "rules-1 measured on heldout-3 after the freeze, in the same PR (heldout-3-baseline.json)",
+    "assisted_2_freeze": "prompt, model, configuration and verifier version hashed in a committed file before the first heldout-3 call",
+    "runs": 3,
+    "measured_splits": [
+      "dev",
+      "heldout",
+      "heldout-3"
+    ],
+    "never_sent": [
+      "heldout-2"
+    ],
+    "measured_once": "a later change cannot be measured on heldout-3 again"
+  },
+  "thresholds": {
+    "hard_every_run_all_measured_splits": {
+      "schema_valid_rate": 1.0,
+      "citation_resolution": 1.0,
+      "unsupported_claims": 0,
+      "failure_code_accuracy": 1.0
+    },
+    "hard_every_run_dev": {
+      "accuracy_metrics": 1.0,
+      "silent_conflicts": 0,
+      "wrong_values": 0
+    },
+    "hard_every_run_heldout": "no regression against corpus/eval/heldout-baseline.json",
+    "primary_heldout_3_min_over_runs": {
+      "field_accuracy_gain_over_rules": 0.15,
+      "evidence_completeness_gain_over_rules": 0.15,
+      "abstention_recall_not_below_rules": true,
+      "conflict_recall_not_below_rules": true,
+      "wrong_values_not_above_rules": true,
+      "wrong_party_names": 0,
+      "silent_conflicts_not_above_rules": true
+    },
+    "budget_per_call": {
+      "p95_latency_seconds": 20,
+      "mean_cost_usd": 0.05
+    }
+  },
+  "decision_rule": "assisted-2 may be enabled only if every hard gate holds on every run, every primary threshold holds on the worst of the three runs, and the budget holds; otherwise it is reported as measured and this milestone ships rules-only (no assisted-3)."
+}

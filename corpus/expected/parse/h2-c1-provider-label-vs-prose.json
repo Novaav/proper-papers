@@ -1,0 +1,32 @@
+{
+  "features": {
+    "javascript": false,
+    "xfa": false
+  },
+  "ok": true,
+  "page_count": 2,
+  "pages": [
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 1,
+      "off_page_chars": 0,
+      "text": "SERVICES AGREEMENT\n\nProvider: Northgate Telecom Ltd\nCustomer: Bramble Lane Surgery\nEffective Date: 1 June 2027",
+      "undefined_chars": 0
+    },
+    {
+      "control_chars_removed": 0,
+      "invisible_chars": 0,
+      "number": 2,
+      "off_page_chars": 0,
+      "text": "1. Parties. The services are provided by Southgate Telecom Ltd\nto the Customer named on page 1.",
+      "undefined_chars": 0
+    }
+  ],
+  "schema": "docparser.output.v1",
+  "versions": {
+    "docparser": "0.1.0",
+    "normalizer": "1",
+    "pdfminer.six": "20260107"
+  }
+}

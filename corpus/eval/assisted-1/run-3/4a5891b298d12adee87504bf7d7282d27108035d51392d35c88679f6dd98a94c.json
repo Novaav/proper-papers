@@ -1,0 +1,14 @@
+{
+ "request_sha256": "4a5891b298d12adee87504bf7d7282d27108035d51392d35c88679f6dd98a94c",
+ "response": {
+  "status": "ok",
+  "text": "{\"provider_name\":[],\"customer_name\":[],\"effective_date\":[],\"end_date\":[],\"governing_law\":[],\"contract_value\":[],\"notice_period_days\":[]}",
+  "model": "claude-sonnet-5-5",
+  "input_tokens": 2053,
+  "output_tokens": 61,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "latency_seconds": 1.373,
+  "error": null
+ }
+}
