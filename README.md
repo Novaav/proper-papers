@@ -2,9 +2,11 @@
 
 **Every claim has a source.** Evidence-grounded document intelligence.
 
-Proper Papers turns service-agreement PDFs into structured records in which every value links to the exact text it came from. Missing information stays UNKNOWN, conflicting information requires a human decision, and approved records are exported as immutable, versioned JSON.
+Proper Papers turns service-agreement PDFs into structured, reviewable data. Every extracted value links back to the exact text in the document, so people can verify where it came from. Missing information stays unknown, conflicting information is flagged for human review, and approved records are saved as versioned JSON.
 
-It is a working full-stack project, not a mock-up: a Next.js review workbench over a FastAPI service, PostgreSQL with row-level security, a worker that parses each PDF in an isolated container, and ClamAV scanning before anything is stored. The scope is deliberately narrow (synthetic service agreements, seven fields) so behaviour can be measured. Extraction is deterministic rules only; a model-assisted variant was evaluated and is not enabled. Nothing is deployed and it is not production-ready.
+Built with Next.js, FastAPI and PostgreSQL, the system includes document scanning, isolated PDF processing, tenant-level data isolation and an evidence-based review workflow. It is a working portfolio project, not a production deployment.
+
+> **Status:** extraction is rules-only at runtime. Model-assisted extraction was evaluated but is not enabled ([Evaluation](#evaluation)). The project is not production-ready and nothing is deployed ([Limits](#status-and-limits)).
 
 ## What is different about it
 
