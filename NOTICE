@@ -1,10 +1,11 @@
-Proper Papers is licensed under the MIT License (see LICENSE).
+Proper Papers is copyright (c) 2026 Nova Zandkarimi, all rights reserved (see
+LICENSE). Earlier versions were published under the MIT License.
 This file lists third-party material that is included in this repository or
 that the project depends on under other terms. Dependencies are installed from
 the lockfiles (apps/web/pnpm-lock.yaml, apps/api/uv.lock, apps/parser/uv.lock)
 and are not redistributed in this repository unless listed under "Included".
 
-The MIT License of this project covers only the original work in this repository
+The project notice in LICENSE covers only the original work in this repository
 (source code, documentation and the synthetic corpus). It does not apply to the
 third-party components below, which remain under their own licences.
 

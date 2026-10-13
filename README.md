@@ -127,4 +127,4 @@ Proper Papers is an independent portfolio project, published as a curated source
 
 ## Licence
 
-MIT, copyright (c) 2026 Nova Zandkarimi. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE), which lists third-party components under their own licences.
+Source-available, not open source. Copyright (c) 2026 Nova Zandkarimi, all rights reserved: the code is public to view and evaluate, and no general permission is granted to copy, modify, redistribute or commercially use it. See [`LICENSE`](LICENSE). Earlier versions were released under the MIT License, and this change does not revoke rights validly granted under it. [`NOTICE`](NOTICE) lists third-party components under their own licences.

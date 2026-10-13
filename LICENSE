@@ -1,21 +1,29 @@
-MIT License
+Proper Papers
 
-Copyright (c) 2026 Nova Zandkarimi
+Copyright (c) 2026 Nova Zandkarimi. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This repository is publicly viewable so that others can inspect and evaluate
+the work. Except as stated below, no licence or permission is granted to copy,
+modify, redistribute, sublicense or commercially exploit the copyrighted
+material in this repository (source code, documentation, the synthetic corpus
+and other original works).
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Nothing in this notice limits any right that applicable law gives you without
+the copyright holder's permission (for example, fair use, fair dealing or other
+statutory exceptions), or any right granted by the terms of service of the
+platform on which this repository is hosted (for example, viewing and forking
+the repository on GitHub).
+
+Earlier versions of this repository were published under the MIT License. This
+notice does not revoke or reduce any rights validly granted under that earlier
+license to material received while it applied, and the MIT License continues
+to govern those earlier versions as released. This notice governs this version
+and later versions of the repository, unless a later version states otherwise.
+
+Third-party components keep their own licences and are not covered by this
+notice. See NOTICE.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT, TO THE EXTENT PERMITTED
+BY APPLICABLE LAW.
