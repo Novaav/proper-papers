@@ -17,7 +17,13 @@ Built with Next.js, FastAPI and PostgreSQL, the system includes document scannin
 
 ## Demo
 
-A recorded walkthrough and screenshots are not published yet. [`docs/demo.md`](docs/demo.md) reproduces the whole flow locally on a disposable database with four synthetic documents.
+Screenshots and a short recording of the real local application, using a synthetic document. [Watch the walkthrough](assets/demo/proper-papers-demo-1080p.mp4) (about 1 minute, no audio). [`docs/demo.md`](docs/demo.md) reproduces the whole flow locally on a disposable database with four synthetic documents.
+
+![Landing page with an example record showing a conflict](assets/demo/overview.png)
+
+![Review workbench: two effective dates, each with its quoted source text](assets/demo/evidence-review.png)
+
+![Every flagged field decided; the record is ready for approval](assets/demo/review-complete.png)
 
 ## The workflow
 
