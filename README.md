@@ -8,12 +8,9 @@ Built with Next.js, FastAPI and PostgreSQL, the system includes document scannin
 
 > **Status:** extraction is rules-only at runtime. Model-assisted extraction was evaluated but is not enabled ([Evaluation](#evaluation)). The project is not production-ready and nothing is deployed ([Limits](#status-and-limits)).
 
-## What is different about it
+## Contents
 
-- **Evidence, UNKNOWN and conflicts are first-class.** Every found value carries quotes that equal the page text at their offsets (a violation fails the run). A missing value is UNKNOWN with a reason; disagreeing clauses become a conflict listing every candidate with its own quote. A reviewer picks an extracted candidate or UNKNOWN, with no free-text editing and no confidence scores.
-- **Tenant isolation lives in the database.** Forced row-level security plus a membership check, and a runtime role the API refuses to use if it could bypass either.
-- **Untrusted PDFs never run in the API.** Each document is parsed in a throwaway container with no network, a read-only root and resource limits, with no in-process fallback.
-- **A negative evaluation result is reported.** Model assistance raised accuracy on a held-out split from 0.63 to 0.96, failed gates fixed in advance, and was therefore not enabled ([Evaluation](#evaluation)).
+[Demo](#demo) · [What is different about it](#what-is-different-about-it) · [The workflow](#the-workflow) · [Architecture](#architecture) · [Security and tenant isolation](#security-and-tenant-isolation) · [Evaluation](#evaluation) · [Verification](#verification) · [Run it](#run-it) · [Status and limits](#status-and-limits) · [Where to look in the code](#where-to-look-in-the-code) · [About this repository](#about-this-repository) · [Licence](#licence)
 
 ## Demo
 
@@ -24,6 +21,13 @@ Screenshots and a short recording of the real local application, using a synthet
 ![Review workbench: two effective dates, each with its quoted source text](assets/demo/evidence-review.png)
 
 ![Every flagged field decided; the record is ready for approval](assets/demo/review-complete.png)
+
+## What is different about it
+
+- **Evidence, UNKNOWN and conflicts are first-class.** Every found value carries quotes that must equal the page text at their offsets; a mismatch fails the run. A missing value is recorded as UNKNOWN with a reason. Clauses that disagree become a conflict listing every candidate with its own quote. A reviewer picks one extracted candidate or UNKNOWN; there is no free-text editing and no confidence score.
+- **Tenant isolation is enforced in the database.** Forced row-level security plus a membership check, and the API refuses to use a runtime role that could bypass either.
+- **Untrusted PDFs never run in the API.** Each document is parsed in a throwaway container with no network, a read-only root and resource limits. There is no in-process fallback.
+- **A negative evaluation result is reported.** Model assistance raised accuracy on a held-out split from 0.63 to 0.96, but it failed gates fixed in advance, so it is not enabled ([Evaluation](#evaluation)).
 
 ## The workflow
 
@@ -123,7 +127,7 @@ Running the app interactively also needs a development OpenID Connect applicatio
 
 ## About this repository
 
-Proper Papers is an independent portfolio project, published as a curated source snapshot after development and validation in a private repository. The single initial commit does not represent the development history.
+Proper Papers is an independent portfolio project, published as a curated source snapshot after development and validation in a private repository. Its public Git history does not represent the full development history.
 
 ## Licence
 
